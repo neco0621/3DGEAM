@@ -1,4 +1,18 @@
-﻿  GamePlayingScene.cpp
+﻿  Camera.cpp
 C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-D:\3DGame\GamePlayingScene.cpp(47,12): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  3DGame.vcxproj -> D:\3DGame\x64\Debug\3DGame.exe
+  GamePlayingScene.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\3DGEAM\3DGame\GamePlayingScene.cpp(47,12): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Input.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Main.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Player.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+  Scene.cpp
+  SceneManager.cpp
+  TitleScene.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\3DGEAM\3DGame\TitleScene.cpp(47,12): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
+  3DGame.vcxproj -> C:\3DGEAM\3DGame\x64\Debug\3DGame.exe
