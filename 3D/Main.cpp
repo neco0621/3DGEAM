@@ -1,45 +1,98 @@
+//-----------------------------------------------------------------------------
+// @brief  メイン処理.
+// 2016 Takeru Yui All Rights Reserved.
+//-----------------------------------------------------------------------------
 #include "DxLib.h"
+#include "Player.h"
+#include "Camera.h"
+#include "ObstructStatic.h"
+#include "ObstructFloat.h"
+#include "ObstructManager.h"
 
-// プログラムは WinMain から始まります
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+// 障害物の数.
+#define OBSTRUCT_NUM 3
+
+//-----------------------------------------------------------------------------
+// @brief  メイン関数.
+//-----------------------------------------------------------------------------
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
-	// 一部の関数はDxLib_Init()の前に実行する必要がある
-	ChangeWindowMode(true);
-
-
-	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
+	// ＤＸライブラリ初期化処理
+	if (DxLib_Init() == -1)
 	{
-		return -1;			// エラーが起きたら直ちに終了
+		return -1;	// エラーが起きたら直ちに終了
 	}
 
-	SetDrawScreen(DX_SCREEN_BACK);
+	// 画面モードのセット
+	SetGraphMode(640, 480, 16);
+	ChangeWindowMode(TRUE);
 
-	//ゲームループ
-	while (ProcessMessage() != -1)
+	// カメラを生成.
+	Camera* camera = new Camera();
+
+	// プレイヤーを生成.
+	Player* player = new Player();
+
+	// 障害物を生成.
+	ObstructBase* obstruct[4];
+	obstruct[0] = new ObstructManager();
+	obstruct[1] = new ObstructStatic();
+	obstruct[2] = new ObstructFloat();
+	obstruct[3] = new ObstructStatic();
+
+	// 障害物の位置を初期化.
+	float band = 10.0f;
+	for (int i = 0; i < 3; i++)
 	{
-		//このフレームの開始時刻を覚えておく
-		LONGLONG start = GetNowHiPerformanceCount();
+		obstruct[i]->SetPos(VGet(-band + (band * i), 0, -1.0f));
+	}
 
-		// 描画を行う前に画面をクリアする
+	// エスケープキーが押されるかウインドウが閉じられるまでループ
+	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
+	{
+		// プレイヤー制御.
+		player->Update();
+
+		// カメラ制御.
+		camera->Update(*player);
+
+		// 障害物制御.
+		for (int i = 0; i < 3; i++)
+		{
+			obstruct[i]->Update();
+		}
+
+		// 画面を初期化する
 		ClearDrawScreen();
-		
-		// 画面が切り替わるのを待つ
+
+		// プレイヤー描画.
+		player->Draw();
+
+		// 障害物描画.
+		for (int i = 0; i < 3; i++)
+		{
+			obstruct[i]->Draw();
+		}
+
+		// 裏画面の内容を表画面に反映させる
 		ScreenFlip();
-
-		//escキーでゲーム終了
-		if (CheckHitKey(KEY_INPUT_ESCAPE))
-		{
-			break;
-		}
-
-		//FPS60固定にする
-		while (GetNowHiPerformanceCount() - start < 16667)
-		{
-			//16.66ミリ秒(16667マイクロ秒)経過するまで待つ
-		}
 	}
 
-	DxLib_End();				// ＤＸライブラリ使用の終了処理
+	// プレイヤーを削除.
+	delete(player);
 
-	return 0;				// ソフトの終了 
+	// カメラを削除.
+	delete(camera);
+
+	// 障害物を削除.
+	for (int i = 0; i < 3; i++)
+	{
+		delete(obstruct[i]);
+	}
+
+	// ＤＸライブラリの後始末
+	DxLib_End();
+
+	// ソフトの終了
+	return 0;
 }
