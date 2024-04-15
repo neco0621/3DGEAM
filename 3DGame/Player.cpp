@@ -1,11 +1,14 @@
 #include "Player.h"
+#include "Game.h"
+#include "input.h"
 
-Player::Player()
+Player::Player() :
+	JumpPower(10),
+	m_tq(Game::kScreenHeight * 0.75f)
 {
-	// ‚R‚cƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ
-	modelHandle = MV1LoadModel("data/model/player/hackadoll.pmx");
+	m_handle = LoadGraph("data/Player.png");
 
-	pos = VGet(0, 0, 0);
+	JumpFlag = false;
 }
 
 Player::~Player()
@@ -14,16 +17,23 @@ Player::~Player()
 	MV1DeleteModel(modelHandle);
 }
 
-void Player::Update()
+void Player::Update(Input& input)
 {
 	// ƒL[“ü—Íæ“¾
 	int Key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
-	if (Key & KEY_INPUT_SPACE)
-	{
+	pos.y -= JumpPower;
 
+	if (input.IsTriggered("space"))
+	{
+		pos.y = m_tq;
+		JumpPower = 20;
 	}
 
+	if (pos.y <= Game::kScreenWidth * 0.75f)
+	{
+		pos.y = m_tq;
+	}
 	// ‚RDƒ‚ƒfƒ‹‚Ìƒ|ƒWƒVƒ‡ƒ“İ’è
 	MV1SetPosition(modelHandle, pos);
 }
@@ -31,5 +41,7 @@ void Player::Update()
 void Player::Draw()
 {
 	// ‚R‚cƒ‚ƒfƒ‹‚Ì•`‰æ
-	MV1DrawModel(modelHandle);
+	//MV1DrawModel(modelHandle);
+	//DrawGraph(pos.x, pos.y, m_handle, true);
+	DrawCircle(Game::kScreenWidth * 0.5, Game::kScreenHeight * 0.75, 20, GetColor(255,0,0),true);
 }

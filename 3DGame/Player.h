@@ -3,13 +3,14 @@
 
 #include "DxLib.h"
 
-class Player final
+class Input;
+class Player
 {
 public:
 	Player();				// コンストラクタ.
 	~Player();				// デストラクタ.
 
-	void Update();			// 更新.
+	void Update(Input& input);			// 更新.
 	void Draw();			// 描画.
 
 	// モデルハンドルの取得.
@@ -20,6 +21,10 @@ public:
 	void SetPos(const VECTOR set) { pos = set; }
 
 private:
+	bool JumpFlag;
+	int JumpPower;
+	int m_tq;
+	int m_handle;
 	int		modelHandle;	// モデルハンドル.
 	VECTOR	pos;			// ポジション.
 
