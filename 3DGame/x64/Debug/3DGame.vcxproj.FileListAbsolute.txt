@@ -1,2 +1,0 @@
-D:\3DGame\x64\Debug\3DGame.exe
-C:\3DGEAM\3DGame\x64\Debug\3DGame.exe
