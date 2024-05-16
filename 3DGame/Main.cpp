@@ -3,12 +3,13 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "SceneMain.h"
+#include "Game.h"
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	// 一部の関数はDxLib_Init()の前に実行する必要がある
-	SetGraphMode(1080, 720, 16);
+	SetGraphMode(Game::kScreenWidth, Game::kScreenHeight, 16);
 	ChangeWindowMode(true);
 
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
@@ -17,6 +18,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	SetDrawScreen(DX_SCREEN_BACK);
+
+	// 3D描画の奥行情報を使用する設定
+	SetUseZBuffer3D(true);
+	//描画を行うとき、Zバッファにも情報を書き込むようにする
+	SetWriteZBuffer3D(true);
 
 	SceneManager manager;
 	manager.ChangeScene(std::make_shared<SceneMain>(manager));

@@ -15,6 +15,8 @@ private:
 	int m_modelHandle;
 
 	VECTOR m_pos;
+	
+	float m_radius;
 
 	bool m_isExist;
 

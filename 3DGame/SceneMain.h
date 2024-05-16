@@ -23,6 +23,6 @@ private:
 
 	Camera* m_pCamera;
 
-	std::vector<SoccerBall*> m_pBall;
+	SoccerBall* m_pBall;
 };
 

@@ -1,12 +1,11 @@
 #include "Camera.h"
 #include "Player.h"
+#include "Game.h"
 
 Camera::Camera()
 {
-	SetCameraNearFar(0.1f, 1000.0f);
-
-	pos = VGet(540, 720, 360);	
-	SetCameraPositionAndTarget_UpVecY(pos, VGet(540.0f, 0.0f, 360.0f));
+	pos = VGet(Game::kScreenWidth / 2, 540, Game::kScreenHeight / 2);
+	
 }
 
 Camera::~Camera()
@@ -18,7 +17,7 @@ void Camera::Init()
 {
 }
 
-void Camera::Update(const Player& player)
+void Camera::Update()
 {
 	
 }

@@ -12,7 +12,6 @@ public:
 	void Draw();
 
 	VECTOR GetPos() const { return m_pos; }
-
 private:
 	//3Dƒ‚ƒfƒ‹‚Ìƒnƒ“ƒhƒ‹
 	int m_modelHandle;

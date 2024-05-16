@@ -1,3 +1,7 @@
-﻿  Camera.cpp
+﻿  SceneMain.cpp
 C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+D:\3DGame\SceneMain.cpp(49,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\3DGame\SceneMain.cpp(53,14): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\3DGame\SceneMain.cpp(63,32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\3DGame\SceneMain.cpp(64,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   3DGame.vcxproj -> D:\3DGame\x64\Debug\3DGame.exe

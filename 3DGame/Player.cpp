@@ -1,8 +1,9 @@
 #include "Player.h"
 #include "Pad.h"
+#include "Game.h"
 
 Player::Player() :
-	m_pos(VGet(540.0f, 0.0f, 360.0f)),
+	m_pos(VGet(Game::kScreenWidth / 2, 0.0f, Game::kScreenHeight / 2)),
 	m_modelHandle(-1)
 {
 	m_modelHandle = MV1LoadModel("data/Character.mv1");
@@ -14,7 +15,8 @@ Player::~Player()
 
 void Player::Init()
 {
-	ChangeLightTypeDir(VGet(-2.0f, 0.0f, -1.0f));
+	MV1SetScale(m_modelHandle, VGet(0.5f, 0.5f, 0.5f));
+	SetUseLighting(FALSE);
 }
 
 void Player::Update()
@@ -23,28 +25,28 @@ void Player::Update()
 
 	if (((pad & PAD_INPUT_UP) | (pad & PAD_INPUT_8)) != 0)
 	{
-		m_pos = VAdd(m_pos, VGet(0, 0, 4));
+		m_pos = VAdd(m_pos, VGet(0, 0, 5));
 	}
 
 	if (((pad & PAD_INPUT_DOWN) | (pad & PAD_INPUT_5)) != 0)
 	{
-		m_pos = VSub(m_pos, VGet(0, 0, 4));
+		m_pos = VSub(m_pos, VGet(0, 0, 5));
 	}
 
 	if (((pad & PAD_INPUT_LEFT) | (pad & PAD_INPUT_4)) != 0)
 	{
-		m_pos = VSub(m_pos, VGet(4, 0, 0));
+		m_pos = VSub(m_pos, VGet(5, 0, 0));
 	}
 
 	if (((pad & PAD_INPUT_RIGHT) | (pad & PAD_INPUT_6)) != 0)
 	{
-		m_pos = VAdd(m_pos, VGet(4, 0, 0));
+		m_pos = VAdd(m_pos, VGet(5, 0, 0));
 	}
 
 
-	if (m_pos.x > 1080)
+	if (m_pos.x > Game::kScreenWidth)
 	{
-		m_pos = VGet(1080, m_pos.y, m_pos.z);
+		m_pos = VGet(Game::kScreenWidth, m_pos.y, m_pos.z);
 	}
 	
 	if (m_pos.x < 0)
@@ -52,9 +54,9 @@ void Player::Update()
 		m_pos = VGet(0, m_pos.y, m_pos.z);
 	}
 
-	if (m_pos.z > 720)
+	if (m_pos.z > Game::kScreenHeight)
 	{
-		m_pos = VGet(m_pos.x, m_pos.y, 720);
+		m_pos = VGet(m_pos.x, m_pos.y, Game::kScreenHeight);
 	}
 
 	if (m_pos.z < 0)

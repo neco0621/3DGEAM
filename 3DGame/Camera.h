@@ -9,7 +9,7 @@ public:
 	~Camera();
 	void Init();
 
-	void Update(const Player& player);
+	void Update();
 
 	void Draw();
 
