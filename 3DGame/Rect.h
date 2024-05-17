@@ -56,5 +56,7 @@ public:
 	float m_centerZ;	//中心のZ座標
 	float m_radius;		//半径
 
+	VECTOR m_pos;	//現在地の座標
+
 	int DivNum;	//ポリゴン数
 };

@@ -1,3 +1,7 @@
-﻿  Vec3.cpp
-  LINK : 前回のインクリメンタル リンクで C:\3DGEAM\3DGame\x64\Debug\3DGame.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+﻿  SoccerBall.cpp
+C:\Users\fko2347078\Downloads\DxLib_VC3_24b\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
+C:\3DGEAM\3DGame\SoccerBall.cpp(30,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(34,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(38,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(43,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   3DGame.vcxproj -> C:\3DGEAM\3DGame\x64\Debug\3DGame.exe
