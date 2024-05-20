@@ -10,6 +10,8 @@ class Camera;
 class Timer;
 class SoccerBall;
 class Bg;
+class ReadCsv;
+
 class SceneMain : public Scene
 {
 public:
@@ -32,6 +34,8 @@ private:
 	Rect m_pRect;
 
 	Bg* m_pBg;
+
+	ReadCsv* m_pRead;
 
 	bool m_gameOverFlag;
 };

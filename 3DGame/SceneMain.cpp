@@ -8,6 +8,7 @@
 #include "Game.h"
 #include "Timer.h"
 #include "Bg.h"
+#include "ReadCsv.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false)
@@ -30,6 +31,9 @@ m_gameOverFlag(false)
 
 	m_pBg = new Bg;
 	m_pBg->Init();
+
+	m_pRead = new ReadCsv;
+	m_pRead->Init();
 }
 
 SceneMain::~SceneMain()
@@ -52,6 +56,9 @@ SceneMain::~SceneMain()
 
 	delete m_pBg;
 	m_pBg = nullptr;
+
+	delete m_pRead;
+	m_pRead = nullptr;
 }
 
 void SceneMain::Init()
@@ -105,9 +112,10 @@ void SceneMain::Update(Input& input)
 void SceneMain::Draw()
 {
 	//•`‰æˆ—
-	m_pBg->Draw();
-	m_pPlayer->Draw();
-	m_pCamera->Draw();
-	m_pBall->Draw();
-	m_pTimer->Draw();
+	m_pRead->Draw();
+	//m_pBg->Draw();
+	//m_pPlayer->Draw();
+	//m_pCamera->Draw();
+	//m_pBall->Draw();
+	//m_pTimer->Draw();
 }
