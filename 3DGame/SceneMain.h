@@ -9,6 +9,7 @@ class Player;
 class Camera;
 class Timer;
 class SoccerBall;
+class Bg;
 class SceneMain : public Scene
 {
 public:
@@ -29,6 +30,8 @@ private:
 	Timer* m_pTimer;
 
 	Rect m_pRect;
+
+	Bg* m_pBg;
 
 	bool m_gameOverFlag;
 };

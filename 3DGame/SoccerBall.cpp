@@ -43,6 +43,7 @@ void SoccerBall::Update()
 	if (m_pos.z < -300)
 	{
 		m_pos = VGet(GetRand(720), 0.0f, 2000.0f);
+
 		//ƒ‰ƒ“ƒ_ƒ€‚É“G‚ð‘I‘ð
 		switch (GetRand(2))		//0 or 1 or 2
 		{

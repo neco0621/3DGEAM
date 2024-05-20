@@ -7,6 +7,7 @@
 #include "SoccerBall.h"
 #include "Game.h"
 #include "Timer.h"
+#include "Bg.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false)
@@ -26,6 +27,9 @@ m_gameOverFlag(false)
 	//タイマーのメモリを確保
 	m_pTimer = new Timer;
 	m_pTimer->Init();
+
+	m_pBg = new Bg;
+	m_pBg->Init();
 }
 
 SceneMain::~SceneMain()
@@ -45,6 +49,9 @@ SceneMain::~SceneMain()
 	//タイマーのメモリの開放
 	delete m_pTimer;
 	m_pTimer = nullptr;
+
+	delete m_pBg;
+	m_pBg = nullptr;
 }
 
 void SceneMain::Init()
@@ -98,6 +105,7 @@ void SceneMain::Update(Input& input)
 void SceneMain::Draw()
 {
 	//描画処理
+	m_pBg->Draw();
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();
