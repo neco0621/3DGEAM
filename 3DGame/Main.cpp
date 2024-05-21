@@ -3,6 +3,7 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "SceneMain.h"
+#include "TitleScene.h"
 #include "Game.h"
 
 // プログラムは WinMain から始まります
@@ -25,7 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetWriteZBuffer3D(true);
 
 	SceneManager manager;
-	manager.ChangeScene(std::make_shared<SceneMain>(manager));
+	manager.ChangeScene(std::make_shared<TitleScene>(manager));
 	Input input;
 	manager.Init();
 	//ゲームループ
