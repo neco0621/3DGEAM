@@ -22,19 +22,19 @@ public:
 	virtual void Draw();
 
 private:
-
+	//プレイヤー
 	Player* m_pPlayer;
-
+	//カメラ
 	Camera* m_pCamera;
-
+	//ボール
 	SoccerBall* m_pBall;
-
+	//タイマー
 	Timer* m_pTimer;
-
+	//当たり判定
 	Rect m_pRect;
-
+	//背景
 	Bg* m_pBg;
-
+	//CSVファイル
 	ReadCsv* m_pRead;
 
 	bool m_gameOverFlag;
