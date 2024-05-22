@@ -3,7 +3,6 @@
 #include "SceneManager.h"
 #include "SceneMain.h"
 #include "TitleScene.h"
-#include "GameOverScene.h"
 #include "Player.h"
 #include "Camera.h"
 #include "SoccerBall.h"
@@ -13,7 +12,8 @@
 #include "ReadCsv.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
-m_gameOverFlag(false)
+m_gameOverFlag(false),
+m_timer(1800.0f)
 {
 	updateFunc_ = &SceneMain::FadeInUpdate;
 	drawFunc_ = &SceneMain::FadeDraw;
@@ -39,6 +39,8 @@ m_gameOverFlag(false)
 
 	m_pRead = new ReadCsv;
 	m_pRead->Init();
+
+	m_handle = LoadGraph("data/Sunny.png");
 }
 
 SceneMain::~SceneMain()
@@ -72,16 +74,17 @@ void SceneMain::Init()
 
 void SceneMain::Update(Input& input)
 {
-	
-
-	
+	(this->*updateFunc_)(input);
 }
 
 void SceneMain::Draw()
 {
+	//描画先スクリーンをクリアする
+	ClearDrawScreen();
+
 	//描画処理
+	DrawGraph(0, 0, m_handle, true);
 	m_pRead->Draw();
-	m_pBg->Draw();
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();
@@ -101,12 +104,56 @@ void SceneMain::FadeInUpdate(Input& input)
 
 void SceneMain::NormalUpdate(Input& input)
 {
+	m_timer--;
 	//Enterが押されたとき
 	if (input.IsTriggered("OK"))
 	{
 		//FadeUpdateとFadeDrawを呼ぶ
 		updateFunc_ = &SceneMain::FadeOutUpdate;
 		drawFunc_ = &SceneMain::FadeDraw;
+	}
+	//更新処理
+	m_pPlayer->Update();
+	m_pBall->Update();
+	m_pCamera->Update();
+	m_pTimer->Update();
+
+	//球同士の当たり判定
+	VECTOR Vec = VSub(m_pPlayer->GetPos(), m_pBall->GetPos());
+
+	if (VSize(Vec) < m_pPlayer->GetRadius() + m_pBall->GetRadius())
+	{
+		m_gameOverFlag = true;
+	}
+
+	for (int x = 0; x < Game::kScreenWidth; x += 100)
+	{
+		//奥方向の線分を引く
+		VECTOR startPos;
+		VECTOR endPos;
+		startPos.x = x;
+		startPos.y = 0.0f;
+		startPos.z = 0.0f;
+
+		endPos.x = x;
+		endPos.y = 0.0f;
+		endPos.z = 720.0f;
+
+		DrawLine3D(startPos, endPos, 0xff0000);
+	}
+
+	//横方向の線分を引く
+	for (int z = 0; z < Game::kScreenHeight; z += 100)
+	{
+		VECTOR startPos = VGet(0, 0, z);
+		VECTOR endPos = VGet(Game::kScreenWidth, 0, z);
+		DrawLine3D(startPos, endPos, 0x0000ff);
+	}
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
+
+	if (m_timer < 0)
+	{
+		manager_.ChangeScene(std::make_shared<TitleScene>(manager_));
 	}
 }
 
@@ -115,46 +162,7 @@ void SceneMain::FadeOutUpdate(Input& input)
 	m_frame++;
 	if (m_frame >= 60) {
 		//次のシーンに移動する
-		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
-
-		//更新処理
-		m_pPlayer->Update();
-		m_pBall->Update();
-		m_pCamera->Update();
-		m_pTimer->Update();
-
-		//球同士の当たり判定
-		VECTOR Vec = VSub(m_pPlayer->GetPos(), m_pBall->GetPos());
-
-		if (VSize(Vec) < m_pPlayer->GetRadius() + m_pBall->GetRadius())
-		{
-			m_gameOverFlag = true;
-		}
-
-		for (int x = 0; x < Game::kScreenWidth; x += 100)
-		{
-			//奥方向の線分を引く
-			VECTOR startPos;
-			VECTOR endPos;
-			startPos.x = x;
-			startPos.y = 0.0f;
-			startPos.z = 0.0f;
-
-			endPos.x = x;
-			endPos.y = 0.0f;
-			endPos.z = 720.0f;
-
-			DrawLine3D(startPos, endPos, 0xff0000);
-		}
-
-		//横方向の線分を引く
-		for (int z = 0; z < Game::kScreenHeight; z += 100)
-		{
-			VECTOR startPos = VGet(0, 0, z);
-			VECTOR endPos = VGet(Game::kScreenWidth, 0, z);
-			DrawLine3D(startPos, endPos, 0x0000ff);
-		}
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
+		manager_.ChangeScene(std::make_shared<TitleScene>(manager_));
 	}
 }
 
