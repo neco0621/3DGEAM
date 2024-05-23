@@ -8,6 +8,8 @@ m_frame(60)
 {
 	updateFunc_ = &TitleScene::FadeInUpdate;
 	drawFunc_ = &TitleScene::FadeDraw;
+
+	m_handle = LoadGraph("data/Title.png");
 }
 
 TitleScene::~TitleScene()
@@ -25,6 +27,7 @@ void TitleScene::Update(Input& input)
 
 void TitleScene::Draw()
 {
+	(this->*drawFunc_)();
 }
 
 void TitleScene::FadeInUpdate(Input& input)
@@ -69,4 +72,5 @@ void TitleScene::FadeDraw()
 
 void TitleScene::NormalDraw()
 {
+	DrawGraph(0,0,m_handle,true);
 }

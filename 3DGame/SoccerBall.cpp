@@ -9,8 +9,12 @@ SoccerBall::SoccerBall() :
 	m_radius(100.0f),
 	m_speed(15.0f),
 	m_timer(1800.0f),
+	m_maxTimer(1800.0f),
 	m_maxCourvePower(10.0f),
-	m_scale(100.0f)
+	m_scale(100.0f),
+	m_rotation(VGet(0,0,0)),
+	m_rotatePower(0.0f),
+	m_maxRotatePower(0.4f)
 {
 }
 
@@ -27,17 +31,20 @@ void SoccerBall::Init()
 void SoccerBall::Update()
 {
 	m_timer--;
-	if (m_timer > (m_timer / 3) * 2)
+	if (m_timer < (m_maxTimer / 3) * 2)
 	{
-		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed));
+		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 1.5f));
+		m_rotation = VAdd(m_rotation, VGet(0.15f, m_curvePower / 150.0f, 0));
 	}
-	else if (m_timer < m_timer / 3)
+	else if (m_timer < m_maxTimer / 3)
 	{
 		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 2.0f));
+		m_rotation = VAdd(m_rotation, VGet(0.2f, m_curvePower / 150.0f, 0));
 	}
 	else
 	{
-		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 1.5f));
+		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed));
+		m_rotation = VAdd(m_rotation, VGet(0.1f, m_curvePower / 150.0f, 0));
 	}
 
 	if (m_pos.z < -300)
@@ -56,6 +63,16 @@ void SoccerBall::Update()
 		}
 	}
 
+	if (m_rotation.x > 360)
+	{
+		m_rotation.x = 0;
+	}
+
+	if (m_rotation.y > 360)
+	{
+		m_rotation.y = 0;
+	}
+
 	if (m_pos.x < 0)
 	{
 		m_curvePower = -m_curvePower;
@@ -69,6 +86,7 @@ void SoccerBall::Update()
 
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_modelHandle, m_pos);
+	MV1SetRotationXYZ(m_modelHandle, m_rotation);
 	m_colRect.SetRadius3D(m_pos.x, m_pos.y, m_pos.z, m_radius);
 }
 

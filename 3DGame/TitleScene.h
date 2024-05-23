@@ -27,5 +27,7 @@ private:
     void NormalDraw();  //非フェード描画
 
     float m_frame;
+
+    int m_handle;
 };
 

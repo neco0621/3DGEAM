@@ -35,7 +35,6 @@ private:
 	//描画関数
 	void FadeDraw();    //フェード中描画
 	void NormalDraw();  //非フェード描画
-
 	float m_frame;
 
 	//プレイヤー
@@ -54,5 +53,9 @@ private:
 	ReadCsv* m_pRead;
 
 	bool m_gameOverFlag;
+
+	int m_handle;
+
+	float m_timer;
 };
 

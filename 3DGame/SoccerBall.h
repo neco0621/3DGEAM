@@ -35,5 +35,9 @@ private:
 	float m_speed;
 	//ƒ{[ƒ‹‚Ì‘å‚«‚³
 	float m_scale;
+	VECTOR m_rotation;
+	float m_rotatePower;
+	float m_maxRotatePower;
+	float m_maxTimer;
 };
 
