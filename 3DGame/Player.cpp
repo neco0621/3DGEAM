@@ -2,32 +2,36 @@
 #include "Player.h"
 #include "Pad.h"
 #include "Game.h"
+#include "SceneManager.h"
 
-Player::Player() :
-	//初期化
-	m_pos(VGet(Game::kScreenWidth / 2, 0.0f, Game::kScreenHeight / 2)),
-	m_modelHandle(-1),
-	m_radius(70)
+Player::Player()
 {
 	//モデルをロード
-	m_modelHandle = MV1LoadModel("data/Character.mv1");
+	m_handle = MV1LoadModel("data/Character.mv1");
 }
 
 Player::~Player()
 {
 }
 
-void Player::Init()
+void Player::Init(SceneManager& mgr)
 {
+	std::shared_ptr<ReadCsv> pData = mgr.GetReadCsv();
+	m_data = pData->GetData();
+	auto& stageName = pData->GetDataName();
+
+	m_useDataName = stageName[1];
+
+	m_pos = VGet(m_data[m_useDataName].startPos.x, 0.0f, m_data[m_useDataName].startPos.z);
+
 	//モデルのサイズを調整
-	MV1SetScale(m_modelHandle, VGet(0.5f, 0.5f, 0.5f));
+	MV1SetScale(m_handle, VGet(0.5f, 0.5f, 0.5f));
 	//ライトを使うか使わないか
 	SetUseLighting(FALSE);
 }
 
 void Player::Update()
 {
-
 	//プレイヤーの移動
 	int pad = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
@@ -71,7 +75,7 @@ void Player::Update()
 	}
 
 	// ３Dモデルのポジション設定
-	MV1SetPosition(m_modelHandle, m_pos);
+	MV1SetPosition(m_handle, m_pos);
 	//当たり判定の円を作成
 	m_colRect.SetRadius3D(m_pos.x,m_pos.y + 50,m_pos.z,m_radius);
 }
@@ -79,7 +83,7 @@ void Player::Update()
 void Player::Draw()
 {
 	//モデルの描画
-	MV1DrawModel(m_modelHandle);
+	MV1DrawModel(m_handle);
 #ifdef _DEBUG
 	DrawFormatString(80, 80, GetColor(255, 255, 255), "プレイヤーの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
 	m_colRect.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);

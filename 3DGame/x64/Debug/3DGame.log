@@ -1,12 +1,105 @@
-﻿  Main.cpp
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Main.cpp(13,41): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Main.cpp(13,21): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+﻿  Camera.cpp
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C3511: 'ReadCsv::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2665: 'ReadCsv::Data::Data': オーバーロードされた関数ですべての引数の型を変換できませんでした
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)' の可能性があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data &&' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : または 'ReadCsv::Data::Data(const ReadCsv::Data &)'
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(const ReadCsv::Data &)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data &' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 引数リスト '(const std::vector<int,std::allocator<int>>)' を一致させようとしているとき
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'startPos': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'rectRadius': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'moveSpeed': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+  Player.cpp
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C3511: 'ReadCsv::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2665: 'ReadCsv::Data::Data': オーバーロードされた関数ですべての引数の型を変換できませんでした
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)' の可能性があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data &&' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : または 'ReadCsv::Data::Data(const ReadCsv::Data &)'
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(const ReadCsv::Data &)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data &' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 引数リスト '(const std::vector<int,std::allocator<int>>)' を一致させようとしているとき
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'startPos': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'rectRadius': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'moveSpeed': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+  ReadCsv.cpp
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C3511: 'ReadCsv::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2665: 'ReadCsv::Data::Data': オーバーロードされた関数ですべての引数の型を変換できませんでした
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)' の可能性があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data &&' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : または 'ReadCsv::Data::Data(const ReadCsv::Data &)'
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(const ReadCsv::Data &)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data &' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 引数リスト '(const std::vector<int,std::allocator<int>>)' を一致させようとしているとき
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'startPos': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'rectRadius': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'moveSpeed': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
   SceneMain.cpp
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SceneMain.cpp(134,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SceneMain.cpp(138,14): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SceneMain.cpp(148,32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SceneMain.cpp(149,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  TitleScene.cpp
-C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\TitleScene.cpp(67,12): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SceneMain.cpp(126,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SceneMain.cpp(130,14): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SceneMain.cpp(140,32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SceneMain.cpp(141,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C3511: 'ReadCsv::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2665: 'ReadCsv::Data::Data': オーバーロードされた関数ですべての引数の型を変換できませんでした
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)' の可能性があります
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(ReadCsv::Data &&)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data &&' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : または 'ReadCsv::Data::Data(const ReadCsv::Data &)'
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 'ReadCsv::Data::Data(const ReadCsv::Data &)': 引数 1 を 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data &' へ変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 理由: 'const std::vector<int,std::allocator<int>>' から 'const ReadCsv::Data' へは変換できません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : 引数リスト '(const std::vector<int,std::allocator<int>>)' を一致させようとしているとき
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'startPos': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'rectRadius': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): error C2437: 'moveSpeed': 既に初期化されています
+C:\3DGEAM\3DGame\ReadCsv.h(16,2): message : コンパイラでのこの診断により関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' が生成されました。
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'ReadCsv::Data::Data(const ReadCsv::Data &)' のリファレンスをご覧ください
   コードを生成中...
-  3DGame.vcxproj -> C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\x64\Debug\3DGame.exe

@@ -49,8 +49,6 @@ private:
 	Rect m_pRect;
 	//”wŒi
 	Bg* m_pBg;
-	//CSVƒtƒ@ƒCƒ‹
-	ReadCsv* m_pRead;
 
 	bool m_gameOverFlag;
 

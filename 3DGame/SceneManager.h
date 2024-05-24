@@ -4,6 +4,7 @@
 
 class Input;
 class Scene;
+class ReadCsv;
 /// <summary>
 /// 各シーンの遷移と捜査をコントロールするクラス
 /// </summary>
@@ -41,5 +42,10 @@ public:
 	/// <summary>
 	/// 現在の先頭シーンにポップします
 	/// </summary>
+	 
+	const std::shared_ptr<ReadCsv> GetReadCsv()const { return m_pData; }
+
+
+	std::shared_ptr<ReadCsv> m_pData;		//データマネージャー
 	void PopScene();
 };
