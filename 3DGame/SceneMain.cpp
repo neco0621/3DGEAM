@@ -9,14 +9,12 @@
 #include "Game.h"
 #include "Timer.h"
 #include "Bg.h"
-#include "ReadCsv.h"
+//#include "ReadCsv.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
 m_timer(1800.0f)
 {
-	updateFunc_ = &SceneMain::FadeInUpdate;
-	drawFunc_ = &SceneMain::FadeDraw;
 
 	//プレイヤーのメモリの確保
 	m_pPlayer = new Player;
@@ -36,9 +34,6 @@ m_timer(1800.0f)
 
 	m_pBg = new Bg;
 	m_pBg->Init();
-
-	m_pRead = new ReadCsv;
-	m_pRead->Init();
 
 	m_handle = LoadGraph("data/Sunny.png");
 }
@@ -63,9 +58,6 @@ SceneMain::~SceneMain()
 
 	delete m_pBg;
 	m_pBg = nullptr;
-
-	delete m_pRead;
-	m_pRead = nullptr;
 }
 
 void SceneMain::Init()
@@ -74,43 +66,9 @@ void SceneMain::Init()
 
 void SceneMain::Update(Input& input)
 {
-	(this->*updateFunc_)(input);
-}
-
-void SceneMain::Draw()
-{
-	//描画先スクリーンをクリアする
-	ClearDrawScreen();
-
-	//描画処理
-	DrawGraph(0, 0, m_handle, true);
-	m_pRead->Draw();
-	m_pPlayer->Draw();
-	m_pCamera->Draw();
-	m_pBall->Draw();
-	m_pTimer->Draw();
-}
-
-void SceneMain::FadeInUpdate(Input& input)
-{
-	m_frame--;
-	if (m_frame <= 0)
-	{
-		//遷移条件
-		updateFunc_ = &SceneMain::NormalUpdate;
-		drawFunc_ = &SceneMain::NormalDraw;
-	}
-}
-
-void SceneMain::NormalUpdate(Input& input)
-{
-	m_timer--;
 	//Enterが押されたとき
 	if (input.IsTriggered("OK"))
 	{
-		//FadeUpdateとFadeDrawを呼ぶ
-		updateFunc_ = &SceneMain::FadeOutUpdate;
-		drawFunc_ = &SceneMain::FadeDraw;
 	}
 	//更新処理
 	m_pPlayer->Update();
@@ -157,19 +115,15 @@ void SceneMain::NormalUpdate(Input& input)
 	}
 }
 
-void SceneMain::FadeOutUpdate(Input& input)
+void SceneMain::Draw()
 {
-	m_frame++;
-	if (m_frame >= 60) {
-		//次のシーンに移動する
-		manager_.ChangeScene(std::make_shared<TitleScene>(manager_));
-	}
-}
+	//描画先スクリーンをクリアする
+	ClearDrawScreen();
 
-void SceneMain::FadeDraw()
-{
-}
-
-void SceneMain::NormalDraw()
-{
+	//描画処理
+	DrawGraph(0, 0, m_handle, true);
+	m_pPlayer->Draw();
+	m_pCamera->Draw();
+	m_pBall->Draw();
+	m_pTimer->Draw();
 }

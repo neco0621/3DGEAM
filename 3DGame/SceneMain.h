@@ -22,21 +22,6 @@ public:
 
 private:
 
-	//更新メンバ関数ポインタ
-	void (SceneMain::* updateFunc_)(Input& input);
-	//描画メンバ関数ポインタ
-	using DrawFunc_t = void(SceneMain::*) ();
-	DrawFunc_t drawFunc_;
-	//更新関数
-	void FadeInUpdate(Input& input);
-	void NormalUpdate(Input& input);
-	void FadeOutUpdate(Input& input);
-
-	//描画関数
-	void FadeDraw();    //フェード中描画
-	void NormalDraw();  //非フェード描画
-	float m_frame;
-
 	//プレイヤー
 	Player* m_pPlayer;
 	//カメラ
