@@ -7,6 +7,8 @@ TitleScene::TitleScene(SceneManager& mgr) : Scene(mgr),
 m_frame(60)
 {
 	m_handle = LoadGraph("data/Title.png");
+	//ライトを使うか使わないか
+	SetUseLighting(FALSE);
 }
 
 TitleScene::~TitleScene()

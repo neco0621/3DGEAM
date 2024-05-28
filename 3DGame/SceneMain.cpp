@@ -9,7 +9,8 @@
 #include "Game.h"
 #include "Timer.h"
 #include "Bg.h"
-//#include "ReadCsv.h"
+#include "ClearScene.h"
+#include "GameOverScene.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
@@ -66,10 +67,7 @@ void SceneMain::Init()
 
 void SceneMain::Update(Input& input)
 {
-	//Enter‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
-	if (input.IsTriggered("OK"))
-	{
-	}
+	m_timer--;
 	//XVˆ—
 	m_pPlayer->Update();
 	m_pBall->Update();
@@ -111,7 +109,12 @@ void SceneMain::Update(Input& input)
 
 	if (m_timer < 0)
 	{
-		manager_.ChangeScene(std::make_shared<TitleScene>(manager_));
+		manager_.ChangeScene(std::make_shared<ClearScene>(manager_));
+	}
+
+	if (m_gameOverFlag == true)
+	{
+		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
 	}
 }
 
