@@ -9,6 +9,7 @@
 #include "Game.h"
 #include "Timer.h"
 #include "Bg.h"
+#include "ReadCsv.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
@@ -18,8 +19,8 @@ m_timer(1800.0f)
 	drawFunc_ = &SceneMain::FadeDraw;
 
 	//プレイヤーのメモリの確保
-	m_pPlayer = new Player();
-	m_pPlayer->Init(manager);
+	m_pPlayer = new Player;
+	m_pPlayer->Init();
 
 	//カメラのメモリを確保
 	m_pCamera = new Camera;
@@ -35,6 +36,9 @@ m_timer(1800.0f)
 
 	m_pBg = new Bg;
 	m_pBg->Init();
+
+	m_pRead = new ReadCsv;
+	m_pRead->Init();
 
 	m_handle = LoadGraph("data/Sunny.png");
 }
@@ -59,6 +63,9 @@ SceneMain::~SceneMain()
 
 	delete m_pBg;
 	m_pBg = nullptr;
+
+	delete m_pRead;
+	m_pRead = nullptr;
 }
 
 void SceneMain::Init()
@@ -77,6 +84,7 @@ void SceneMain::Draw()
 
 	//描画処理
 	DrawGraph(0, 0, m_handle, true);
+	m_pRead->Draw();
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();

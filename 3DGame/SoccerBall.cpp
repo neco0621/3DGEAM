@@ -3,6 +3,7 @@
 #include "Timer.h"
 
 SoccerBall::SoccerBall() :
+	m_modelHandle(-1),
 	m_curvePower(0),
 	m_pos(VGet(540.0f, 0.0f, 1500.0f)),
 	m_radius(100.0f),
@@ -19,13 +20,12 @@ SoccerBall::SoccerBall() :
 
 SoccerBall::~SoccerBall()
 {
-	MV1DeleteModel(m_handle);
 }
 
 void SoccerBall::Init()
 {
-	m_handle = MV1LoadModel("data/SoccerBall.mv1");
-	MV1SetScale(m_handle, VGet(m_scale, m_scale, m_scale));
+	m_modelHandle = MV1LoadModel("data/SoccerBall.mv1");
+	MV1SetScale(m_modelHandle, VGet(m_scale, m_scale, m_scale));
 }
 
 void SoccerBall::Update()
@@ -85,15 +85,15 @@ void SoccerBall::Update()
 
 
 	// ３Dモデルのポジション設定
-	MV1SetPosition(m_handle, m_pos);
-	MV1SetRotationXYZ(m_handle, m_rotation);
+	MV1SetPosition(m_modelHandle, m_pos);
+	MV1SetRotationXYZ(m_modelHandle, m_rotation);
 	m_colRect.SetRadius3D(m_pos.x, m_pos.y, m_pos.z, m_radius);
 }
 
 void SoccerBall::Draw()
 {
 	//モデルの描画
-	MV1DrawModel(m_handle);
+	MV1DrawModel(m_modelHandle);
 #ifdef _DEBUG
 	DrawFormatString(80, 120, GetColor(255, 255, 255), "ボールの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
 	m_colRect.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);
