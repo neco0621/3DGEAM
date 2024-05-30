@@ -1,4 +1,4 @@
-﻿  GameOverScene.cpp
-  TitleScene.cpp
-  コードを生成中...
+﻿  Main.cpp
+C:\3DGEAM\3DGame\Main.cpp(13,41): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Main.cpp(13,21): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
   3DGame.vcxproj -> C:\3DGEAM\3DGame\x64\Debug\3DGame.exe

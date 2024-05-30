@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "SceneMain.h"
 #include "Input.h"
+#include "Game.h"
 
 TitleScene::TitleScene(SceneManager& mgr) : Scene(mgr),
 m_frame(60)
