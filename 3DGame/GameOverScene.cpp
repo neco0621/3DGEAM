@@ -4,6 +4,7 @@
 #include "Input.h"
 
 GameOverScene::GameOverScene(SceneManager& mgr) : Scene(mgr),
+//‰Šú‰»
 m_frame(60),
 m_handle(-1)
 {
@@ -31,5 +32,6 @@ void GameOverScene::Update(Input& input)
 
 void GameOverScene::Draw()
 {
+	//•`‰æ
 	DrawGraph(0, 0, m_handle, true);
 }

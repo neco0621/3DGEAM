@@ -2,8 +2,7 @@
 #include "Scene.h"
 #include <DxLib.h>
 
-class ClearScene :
-    public Scene
+class ClearScene :  public Scene
 {
 public:
     ClearScene(SceneManager& mgr);
@@ -16,6 +15,8 @@ public:
 private:
 
     float m_frame;
-
-    int m_handle;
+    //背景のハンドル
+    int m_bgHandle;
+    //クリア文字のハンドル
+    int m_rogoHandle;
 };

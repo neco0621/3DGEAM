@@ -1,4 +1,21 @@
-﻿  Main.cpp
-C:\3DGEAM\3DGame\Main.cpp(13,41): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\Main.cpp(13,21): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+﻿  Player.cpp
+  Rect.cpp
+C:\3DGEAM\3DGame\Rect.cpp(36,88): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(36,62): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(36,36): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(36,176): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(36,148): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(36,121): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(48,96): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(48,67): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(48,38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Rect.cpp(48,127): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  SoccerBall.cpp
+C:\3DGEAM\3DGame\SoccerBall.cpp(39,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(44,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(49,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(56,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(62,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(65,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コードを生成中...
   3DGame.vcxproj -> C:\3DGEAM\3DGame\x64\Debug\3DGame.exe

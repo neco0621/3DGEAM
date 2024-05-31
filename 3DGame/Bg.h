@@ -10,7 +10,8 @@ public:
 	void Init();
 	void Update();
 	void Draw();
-
+private:
+	//”wŒi‚Ìƒnƒ“ƒhƒ‹
 	int m_handle;
 };
 

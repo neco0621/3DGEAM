@@ -7,14 +7,15 @@
 #include "Camera.h"
 #include "SoccerBall.h"
 #include "Game.h"
-#include "Timer.h"
 #include "Bg.h"
 #include "ClearScene.h"
 #include "GameOverScene.h"
+#include "Rect.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
-m_timer(1800.0f)
+m_timer(1800.0f),
+m_groundModel(-1)
 {
 
 	//プレイヤーのメモリの確保
@@ -29,14 +30,15 @@ m_timer(1800.0f)
 	m_pBall = new SoccerBall;
 	m_pBall->Init();
 
-	//タイマーのメモリを確保
-	m_pTimer = new Timer;
-	m_pTimer->Init();
-
+	//背景のモデル確保
 	m_pBg = new Bg;
 	m_pBg->Init();
 
-	m_handle = LoadGraph("data/Sunny.png");
+	m_handle = LoadGraph("data/image/Sunny.png");
+
+	m_groundModel = MV1LoadModel("data/model/Ground.MV1");
+
+	MV1SetScale(m_groundModel, VGet(1.5f, 1, 1.5f));
 }
 
 SceneMain::~SceneMain()
@@ -53,10 +55,6 @@ SceneMain::~SceneMain()
 	delete m_pBall;
 	m_pBall = nullptr;
 
-	//タイマーのメモリの開放
-	delete m_pTimer;
-	m_pTimer = nullptr;
-
 	delete m_pBg;
 	m_pBg = nullptr;
 }
@@ -72,40 +70,16 @@ void SceneMain::Update(Input& input)
 	m_pPlayer->Update();
 	m_pBall->Update();
 	m_pCamera->Update();
-	m_pTimer->Update();
 
-	//球同士の当たり判定
-	VECTOR Vec = VSub(m_pPlayer->GetPos(), m_pBall->GetPos());
+	Rect playerRect = m_pPlayer->GetColRect();
+	Rect ballRect = m_pBall->GetColRect();
+	/*playerRect.m_pos = m_pPlayer->GetPos();
+	ballRect.m_pos = m_pBall->GetPos();*/
 
-	if (VSize(Vec) < m_pPlayer->GetRadius() + m_pBall->GetRadius())
+	if (ballRect.SphereCollision(playerRect))
 	{
 		m_gameOverFlag = true;
 	}
-
-	for (int x = 0; x < Game::kScreenWidth; x += 100)
-	{
-		//奥方向の線分を引く
-		VECTOR startPos;
-		VECTOR endPos;
-		startPos.x = x;
-		startPos.y = 0.0f;
-		startPos.z = 0.0f;
-
-		endPos.x = x;
-		endPos.y = 0.0f;
-		endPos.z = 720.0f;
-
-		DrawLine3D(startPos, endPos, 0xff0000);
-	}
-
-	//横方向の線分を引く
-	for (int z = 0; z < Game::kScreenHeight; z += 100)
-	{
-		VECTOR startPos = VGet(0, 0, z);
-		VECTOR endPos = VGet(Game::kScreenWidth, 0, z);
-		DrawLine3D(startPos, endPos, 0x0000ff);
-	}
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
 
 	if (m_timer < 0)
 	{
@@ -116,6 +90,8 @@ void SceneMain::Update(Input& input)
 	{
 		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
 	}
+	// ３Dモデルのポジション設定
+	MV1SetPosition(m_groundModel, VGet(Game::kScreenWidth / 2,-200,Game::kScreenHeight));
 }
 
 void SceneMain::Draw()
@@ -125,8 +101,9 @@ void SceneMain::Draw()
 
 	//描画処理
 	DrawGraph(0, 0, m_handle, true);
+	MV1DrawModel(m_groundModel);
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();
-	m_pTimer->Draw();
+	DrawFormatString(470, 100, GetColor(255, 255, 255), "残り時間:(%.2f)", m_timer / 60);
 }

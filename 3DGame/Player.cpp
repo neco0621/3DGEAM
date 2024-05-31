@@ -10,7 +10,7 @@ Player::Player() :
 	m_radius(70)
 {
 	//ƒ‚ƒfƒ‹‚ğƒ[ƒh
-	m_modelHandle = MV1LoadModel("data/Character.mv1");
+	m_modelHandle = MV1LoadModel("data/model/Character.mv1");
 }
 
 Player::~Player()

@@ -7,7 +7,6 @@
 
 class Player;
 class Camera;
-class Timer;
 class SoccerBall;
 class Bg;
 class SceneMain : public Scene
@@ -27,17 +26,19 @@ private:
 	Camera* m_pCamera;
 	//ボール
 	SoccerBall* m_pBall;
-	//タイマー
-	Timer* m_pTimer;
 	//当たり判定
 	Rect m_pRect;
 	//背景
 	Bg* m_pBg;
 
+	//ゲームオーバーのフラグ
 	bool m_gameOverFlag;
 
+	//背景のハンドル
 	int m_handle;
 
+	int m_groundModel;
+	//経過時間
 	float m_timer;
 };
 

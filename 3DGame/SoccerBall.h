@@ -12,8 +12,11 @@ public:
 	void Update();
 	void Draw();
 
+	//À•W‚Ìæ“¾
 	VECTOR GetPos() const { return m_pos; }
+	//”¼Œa‚Ìæ“¾
 	float GetRadius() const { return m_radius; }
+	//“–‚½‚è”»’è‚Ìæ“¾
 	Rect GetColRect() const { return m_colRect; }
 
 private:
@@ -35,9 +38,13 @@ private:
 	float m_speed;
 	//ƒ{[ƒ‹‚Ì‘å‚«‚³
 	float m_scale;
+	//‰ñ“]‚·‚éŠp“x
 	VECTOR m_rotation;
+	//‰ñ“]‚Ì‘å‚«‚³
 	float m_rotatePower;
+	//‰ñ“]‚Ì‘å‚«‚³‚ÌÅ‘å’l
 	float m_maxRotatePower;
+	//c‚èŠÔ
 	float m_maxTimer;
 };
 

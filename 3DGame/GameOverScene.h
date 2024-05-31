@@ -2,8 +2,7 @@
 #include "Scene.h"
 #include <DxLib.h>
 
-class GameOverScene :
-    public Scene
+class GameOverScene :   public Scene
 {
 public:
     GameOverScene(SceneManager& mgr);

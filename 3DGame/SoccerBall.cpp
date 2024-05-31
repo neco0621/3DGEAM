@@ -1,8 +1,8 @@
 #include "SoccerBall.h"
 #include "Game.h"
-#include "Timer.h"
 
 SoccerBall::SoccerBall() :
+	//初期化
 	m_modelHandle(-1),
 	m_curvePower(0),
 	m_pos(VGet(540.0f, 0.0f, 1500.0f)),
@@ -24,13 +24,16 @@ SoccerBall::~SoccerBall()
 
 void SoccerBall::Init()
 {
-	m_modelHandle = MV1LoadModel("data/SoccerBall.mv1");
+	//モデルのロード
+	m_modelHandle = MV1LoadModel("data/model/SoccerBall.mv1");
+	//モデルの大きさを調整
 	MV1SetScale(m_modelHandle, VGet(m_scale, m_scale, m_scale));
 }
 
 void SoccerBall::Update()
 {
 	m_timer--;
+	//残り時間によって速さを変える
 	if (m_timer < (m_maxTimer / 3) * 2)
 	{
 		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 1.5f));
@@ -47,6 +50,7 @@ void SoccerBall::Update()
 		m_rotation = VAdd(m_rotation, VGet(0.1f, m_curvePower / 150.0f, 0));
 	}
 
+	//画面外に行ったら初期位置(X座標はランダム)に戻す
 	if (m_pos.z < -300)
 	{
 		m_pos = VGet(GetRand(720), 0.0f, 2000.0f);
@@ -54,39 +58,40 @@ void SoccerBall::Update()
 		//ランダムに敵を選択
 		switch (GetRand(2))		//0 or 1 or 2
 		{
-		case 0:		//Left
+		case 0:		
 			m_curvePower = GetRand(-m_maxCourvePower);
 			break;
-		case 1:		//Right
+		case 1:		
 			m_curvePower = GetRand(m_maxCourvePower);
 			break;
 		}
 	}
 
+	//回転角度が360になったら0度に戻す
 	if (m_rotation.x > 360)
 	{
 		m_rotation.x = 0;
 	}
-
 	if (m_rotation.y > 360)
 	{
 		m_rotation.y = 0;
 	}
 
+	//跳ね返ったときに力を反転させる
 	if (m_pos.x < 0)
 	{
 		m_curvePower = -m_curvePower;
 	}
-
 	if (m_pos.x > Game::kScreenWidth - m_radius)
 	{
 		m_curvePower = -m_curvePower;
 	}
 
-
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_modelHandle, m_pos);
+	//モデルの角度調整
 	MV1SetRotationXYZ(m_modelHandle, m_rotation);
+	//当たり判定の更新
 	m_colRect.SetRadius3D(m_pos.x, m_pos.y, m_pos.z, m_radius);
 }
 

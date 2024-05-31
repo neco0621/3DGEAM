@@ -4,9 +4,12 @@
 #include "Input.h"
 
 ClearScene::ClearScene(SceneManager& mgr) : Scene(mgr),
+//‰Šú‰»
 m_frame(60),
-m_handle(-1)
+m_bgHandle(-1),
+m_rogoHandle(-1)
 {
+	//m_rogoHandle = LoadGraph();
 }
 
 ClearScene::~ClearScene()
@@ -29,5 +32,6 @@ void ClearScene::Update(Input& input)
 
 void ClearScene::Draw()
 {
-	DrawGraph(0, 0, m_handle, true);
+	//•`‰æ
+	DrawGraph(0, 0, m_bgHandle, true);
 }
