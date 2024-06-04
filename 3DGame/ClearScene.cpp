@@ -2,6 +2,7 @@
 #include "TitleScene.h"
 #include "SceneManager.h"
 #include "Input.h"
+#include "Game.h"
 
 ClearScene::ClearScene(SceneManager& mgr) : Scene(mgr),
 //èâä˙âª
@@ -9,7 +10,7 @@ m_frame(60),
 m_bgHandle(-1),
 m_rogoHandle(-1)
 {
-	//m_rogoHandle = LoadGraph();
+	m_rogoHandle = LoadGraph("data/image/GameClear.png");
 }
 
 ClearScene::~ClearScene()
@@ -33,5 +34,5 @@ void ClearScene::Update(Input& input)
 void ClearScene::Draw()
 {
 	//ï`âÊ
-	DrawGraph(0, 0, m_bgHandle, true);
+	DrawGraph(Game::kScreenWidth / 8, 0, m_rogoHandle, true);
 }

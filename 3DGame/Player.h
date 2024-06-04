@@ -1,12 +1,13 @@
 #pragma once
 #include "DxLib.h"
 #include "Rect.h"
+#include "DataLoader.h"
 
 class Player
 {
 public:
 	Player();
-	~Player();
+	virtual ~Player();
 
 	void Init();
 	void Update();
@@ -21,6 +22,8 @@ public:
 	//当たり判定の取得
 	Rect GetColRect() const { return m_colRect; }
 
+	void SetData(DataLoader::Data inputData);
+
 private:
 	//3Dモデルのハンドル
 	int m_modelHandle;
@@ -33,5 +36,11 @@ private:
 
 	//当たり判定の円の半径
 	float m_radius;
+
+	float m_speed;
+
+	std::map <std::string, DataLoader::Data> m_data;	//ステージデータ
+	std::string m_usedataName;			//使用するステージ名
+
 };
 

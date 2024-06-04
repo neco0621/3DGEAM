@@ -73,8 +73,6 @@ void SceneMain::Update(Input& input)
 
 	Rect playerRect = m_pPlayer->GetColRect();
 	Rect ballRect = m_pBall->GetColRect();
-	/*playerRect.m_pos = m_pPlayer->GetPos();
-	ballRect.m_pos = m_pBall->GetPos();*/
 
 	if (ballRect.SphereCollision(playerRect))
 	{
@@ -105,5 +103,6 @@ void SceneMain::Draw()
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();
+	SetFontSize(64);
 	DrawFormatString(470, 100, GetColor(255, 255, 255), "Žc‚èŽžŠÔ:(%.2f)", m_timer / 60);
 }

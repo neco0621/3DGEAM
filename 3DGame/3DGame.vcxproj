@@ -150,6 +150,7 @@
     <ClCompile Include="Bg.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ClearScene.cpp" />
+    <ClCompile Include="DataLoader.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Bg.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ClearScene.h" />
+    <ClInclude Include="DataLoader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Input.h" />

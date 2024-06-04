@@ -8,6 +8,7 @@ GameOverScene::GameOverScene(SceneManager& mgr) : Scene(mgr),
 m_frame(60),
 m_handle(-1)
 {
+	m_rogoHandle = LoadGraph("data/image/GameClear.png");
 	//ライトを使うか使わないか
 	SetUseLighting(FALSE);
 }
@@ -33,5 +34,5 @@ void GameOverScene::Update(Input& input)
 void GameOverScene::Draw()
 {
 	//描画
-	DrawGraph(0, 0, m_handle, true);
+	DrawGraph(0, 0, m_rogoHandle, true);
 }

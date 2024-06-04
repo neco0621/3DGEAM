@@ -6,7 +6,7 @@ class GameOverScene :   public Scene
 {
 public:
     GameOverScene(SceneManager& mgr);
-    ~GameOverScene();
+    virtual ~GameOverScene();
 
     void Init();
     void Update(Input& input);
@@ -15,6 +15,6 @@ public:
 private:
 
     float m_frame;
-
     int m_handle;
+    int m_rogoHandle;
 };

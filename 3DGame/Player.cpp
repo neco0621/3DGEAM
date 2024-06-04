@@ -5,12 +5,12 @@
 
 Player::Player() :
 	//初期化
-	m_pos(VGet(Game::kScreenWidth / 2, 0.0f, Game::kScreenHeight / 2)),
 	m_modelHandle(-1),
 	m_radius(70)
 {
 	//モデルをロード
 	m_modelHandle = MV1LoadModel("data/model/Character.mv1");
+	SetData(m_data[m_usedataName]);
 }
 
 Player::~Player()
@@ -33,22 +33,22 @@ void Player::Update()
 
 	if (((pad & PAD_INPUT_UP) | (pad & PAD_INPUT_8)) != 0)
 	{
-		m_pos = VAdd(m_pos, VGet(0, 0, 7));
+		m_pos = VAdd(m_pos, VGet(0, 0, m_speed));
 	}
 
 	if (((pad & PAD_INPUT_DOWN) | (pad & PAD_INPUT_5)) != 0)
 	{
-		m_pos = VSub(m_pos, VGet(0, 0, 7));
+		m_pos = VSub(m_pos, VGet(0, 0, m_speed));
 	}
 
 	if (((pad & PAD_INPUT_LEFT) | (pad & PAD_INPUT_4)) != 0)
 	{
-		m_pos = VSub(m_pos, VGet(7, 0, 0));
+		m_pos = VSub(m_pos, VGet(m_speed, 0, 0));
 	}
 
 	if (((pad & PAD_INPUT_RIGHT) | (pad & PAD_INPUT_6)) != 0)
 	{
-		m_pos = VAdd(m_pos, VGet(7, 0, 0));
+		m_pos = VAdd(m_pos, VGet(m_speed, 0, 0));
 	}
 
 
@@ -84,4 +84,11 @@ void Player::Draw()
 	DrawFormatString(80, 80, GetColor(255, 255, 255), "プレイヤーの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
 	m_colRect.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);
 #endif
+}
+
+void Player::SetData(DataLoader::Data inputData)
+{
+	m_pos.x = inputData.startPos.x;
+	m_pos.z = inputData.startPos.z;
+	m_speed = inputData.speed;
 }
