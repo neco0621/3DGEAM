@@ -14,20 +14,26 @@ SoccerBall::SoccerBall() :
 	m_scale(100.0f),
 	m_rotation(VGet(0,0,0)),
 	m_rotatePower(0.0f),
-	m_maxRotatePower(0.4f)
+	m_maxRotatePower(0.4f),
+	m_courveAdjustment(150.0f)
 {
+	//モデルのロード
+	m_modelHandle = MV1LoadModel("data/model/SoccerBall.mv1");
 }
 
 SoccerBall::~SoccerBall()
 {
+	//メモリの開放
+	MV1DeleteModel(m_modelHandle);
+
 }
 
 void SoccerBall::Init()
 {
-	//モデルのロード
-	m_modelHandle = MV1LoadModel("data/model/SoccerBall.mv1");
 	//モデルの大きさを調整
 	MV1SetScale(m_modelHandle, VGet(m_scale, m_scale, m_scale));
+	//ライトを使うか使わないか
+	SetUseLighting(FALSE);
 }
 
 void SoccerBall::Update()
@@ -37,17 +43,17 @@ void SoccerBall::Update()
 	if (m_timer < (m_maxTimer / 3) * 2)
 	{
 		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 1.5f));
-		m_rotation = VAdd(m_rotation, VGet(0.15f, m_curvePower / 150.0f, 0));
+		m_rotation = VAdd(m_rotation, VGet(0.15f, m_curvePower / m_courveAdjustment, 0));
 	}
 	else if (m_timer < m_maxTimer / 3)
 	{
 		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed * 2.0f));
-		m_rotation = VAdd(m_rotation, VGet(0.2f, m_curvePower / 150.0f, 0));
+		m_rotation = VAdd(m_rotation, VGet(0.2f, m_curvePower / m_courveAdjustment, 0));
 	}
 	else
 	{
 		m_pos = VSub(m_pos, VGet(m_curvePower, 0, m_speed));
-		m_rotation = VAdd(m_rotation, VGet(0.1f, m_curvePower / 150.0f, 0));
+		m_rotation = VAdd(m_rotation, VGet(0.1f, m_curvePower / m_courveAdjustment, 0));
 	}
 
 	//画面外に行ったら初期位置(X座標はランダム)に戻す

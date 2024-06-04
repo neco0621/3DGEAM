@@ -15,6 +15,8 @@ m_handle(-1)
 
 GameOverScene::~GameOverScene()
 {
+	//ƒƒ‚ƒŠ‚ÌŠJ•ú
+	DeleteGraph(m_rogoHandle);
 }
 
 void GameOverScene::Init()

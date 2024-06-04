@@ -1,4 +1,5 @@
-﻿  Camera.cpp
+﻿  Bg.cpp
+  Camera.cpp
 C:\3DGEAM\3DGame\DataLoader.h(16,2): error C3511: 'DataLoader::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
 C:\3DGEAM\3DGame\DataLoader.h(16,2): message : コンパイラでのこの診断により関数 'DataLoader::Data::Data(const DataLoader::Data &)' が生成されました。
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'DataLoader::Data::Data(const DataLoader::Data &)' のリファレンスをご覧ください
@@ -20,6 +21,8 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
 C:\3DGEAM\3DGame\DataLoader.h(16,2): error C2437: 'speed': 既に初期化されています
 C:\3DGEAM\3DGame\DataLoader.h(16,2): message : コンパイラでのこの診断により関数 'DataLoader::Data::Data(const DataLoader::Data &)' が生成されました。
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'DataLoader::Data::Data(const DataLoader::Data &)' のリファレンスをご覧ください
+  ClearScene.cpp
+C:\3DGEAM\3DGame\ClearScene.cpp(39,31): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   DataLoader.cpp
 C:\3DGEAM\3DGame\DataLoader.cpp(51,35): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
 C:\3DGEAM\3DGame\DataLoader.cpp(65,39): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
@@ -45,6 +48,10 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
 C:\3DGEAM\3DGame\DataLoader.h(16,2): error C2437: 'speed': 既に初期化されています
 C:\3DGEAM\3DGame\DataLoader.h(16,2): message : コンパイラでのこの診断により関数 'DataLoader::Data::Data(const DataLoader::Data &)' が生成されました。
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'DataLoader::Data::Data(const DataLoader::Data &)' のリファレンスをご覧ください
+  GameOverScene.cpp
+  Main.cpp
+C:\3DGEAM\3DGame\Main.cpp(13,41): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Main.cpp(13,21): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
   Player.cpp
 C:\3DGEAM\3DGame\DataLoader.h(16,2): error C3511: 'DataLoader::Data': デリゲート コンストラクターの呼び出しだけをメンバー初期化子にする必要があります
 C:\3DGEAM\3DGame\DataLoader.h(16,2): message : コンパイラでのこの診断により関数 'DataLoader::Data::Data(const DataLoader::Data &)' が生成されました。
@@ -89,4 +96,14 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
 C:\3DGEAM\3DGame\DataLoader.h(16,2): error C2437: 'speed': 既に初期化されています
 C:\3DGEAM\3DGame\DataLoader.h(16,2): message : コンパイラでのこの診断により関数 'DataLoader::Data::Data(const DataLoader::Data &)' が生成されました。
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(175,5): message : 関数 'DataLoader::Data::Data(const DataLoader::Data &)' のリファレンスをご覧ください
+  SoccerBall.cpp
+C:\3DGEAM\3DGame\SoccerBall.cpp(45,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(50,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(55,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(62,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(68,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(71,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  TitleScene.cpp
+C:\3DGEAM\3DGame\TitleScene.cpp(58,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\TitleScene.cpp(58,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   コードを生成中...

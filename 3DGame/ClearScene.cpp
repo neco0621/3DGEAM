@@ -15,6 +15,8 @@ m_rogoHandle(-1)
 
 ClearScene::~ClearScene()
 {
+	//ƒƒ‚ƒŠ‚ÌŠJ•ú
+	DeleteGraph(m_rogoHandle);
 }
 
 void ClearScene::Init()

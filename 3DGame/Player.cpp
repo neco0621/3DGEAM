@@ -15,6 +15,8 @@ Player::Player() :
 
 Player::~Player()
 {
+	//ƒƒ‚ƒŠ‚ÌŠJ•ú
+	MV1DeleteModel(m_modelHandle);
 }
 
 void Player::Init()

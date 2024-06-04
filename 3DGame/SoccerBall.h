@@ -38,6 +38,8 @@ private:
 	float m_speed;
 	//ボールの大きさ
 	float m_scale;
+	//カーブの大きさ調整
+	float m_courveAdjustment;
 	//回転する角度
 	VECTOR m_rotation;
 	//回転の大きさ

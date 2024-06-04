@@ -33,6 +33,7 @@ void TitleScene::Update(Input& input)
 		manager_.ChangeScene(std::make_shared<SceneMain>(manager_));
 	}
 
+
 	if (m_pos.y > 10)
 	{
 		m_moveFlag = false;
@@ -42,6 +43,7 @@ void TitleScene::Update(Input& input)
 		m_moveFlag = true;
 	}
 	
+	//è„â∫Ç…ìÆÇ©Ç∑
 	if (m_moveFlag == true)
 	{
 		m_pos = VAdd(m_pos, VGet(0, 0.2f, 0));
@@ -54,6 +56,7 @@ void TitleScene::Update(Input& input)
 
 void TitleScene::Draw()
 {
+	//ï`âÊ
 	DrawGraph(0, 0, m_bgHandle, true);
 	DrawGraph(m_pos.x, m_pos.y, m_titleRogo, true);
 }
