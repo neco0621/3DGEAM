@@ -9,6 +9,7 @@ class Player;
 class Camera;
 class SoccerBall;
 class Bg;
+class DataLoader;
 class SceneMain : public Scene
 {
 public:
@@ -31,6 +32,7 @@ private:
 	//背景
 	Bg* m_pBg;
 
+	DataLoader* m_pDataLoader;
 	//ゲームオーバーのフラグ
 	bool m_gameOverFlag;
 

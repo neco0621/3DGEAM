@@ -11,6 +11,7 @@
 #include "ClearScene.h"
 #include "GameOverScene.h"
 #include "Rect.h"
+#include "DataLoader.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
@@ -33,6 +34,9 @@ m_groundModel(-1)
 	//”wŒi‚Ìƒ‚ƒfƒ‹Šm•Û
 	m_pBg = new Bg;
 	m_pBg->Init();
+
+	m_pDataLoader = new DataLoader;
+	m_pDataLoader->DataLoad();
 
 	m_handle = LoadGraph("data/image/Sunny.png");
 
@@ -57,6 +61,9 @@ SceneMain::~SceneMain()
 
 	delete m_pBg;
 	m_pBg = nullptr;
+
+	delete m_pDataLoader;
+	m_pDataLoader = nullptr;
 }
 
 void SceneMain::Init()
@@ -103,6 +110,6 @@ void SceneMain::Draw()
 	m_pPlayer->Draw();
 	m_pCamera->Draw();
 	m_pBall->Draw();
-	SetFontSize(64);
+	//SetFontSize(64);
 	DrawFormatString(470, 100, GetColor(255, 255, 255), "Žc‚èŽžŠÔ:(%.2f)", m_timer / 60);
 }

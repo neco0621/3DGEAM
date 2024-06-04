@@ -1,0 +1,31 @@
+﻿  Bg.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Bg.h(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Camera.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Camera.h(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  ClearScene.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\ClearScene.h(3,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  DataLoader.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\DataLoader.h(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  GameOverScene.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\GameOverScene.h(3,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Input.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Input.cpp(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Main.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Main.cpp(1,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Pad.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Pad.cpp(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Player.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Player.h(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  ReadCsv.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\ReadCsv.h(4,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Rect.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\Rect.h(3,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Scene.cpp
+  SceneMain.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SceneMain.cpp(1,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  SceneManager.cpp
+  SoccerBall.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\SoccerBall.h(2,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  TitleScene.cpp
+C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\TitleScene.h(3,10): fatal error C1083: include ファイルを開けません。'DxLib.h':No such file or directory
+  Vec3.cpp

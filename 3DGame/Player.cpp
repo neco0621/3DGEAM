@@ -3,6 +3,7 @@
 #include "Pad.h"
 #include "Game.h"
 
+
 Player::Player() :
 	//‰Šú‰»
 	m_modelHandle(-1),
@@ -29,7 +30,6 @@ void Player::Init()
 
 void Player::Update()
 {
-
 	//ƒvƒŒƒCƒ„[‚ÌˆÚ“®
 	int pad = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 

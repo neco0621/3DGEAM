@@ -10,9 +10,9 @@ class DataLoader
 public:
 	struct Data
 	{
-		std::vector<int> Data;
-		VECTOR startPos = VGet(0.0f, 0.0f, 0.0f);
-		float speed = 0.0f;
+		std::vector<int> data;
+		VECTOR startPos;
+		float speed;
 	};
 
 	enum m_dataOrder

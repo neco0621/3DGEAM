@@ -3,6 +3,7 @@
 #include "Rect.h"
 #include "DataLoader.h"
 
+class DataLoader;
 class Player
 {
 public:
@@ -41,6 +42,8 @@ private:
 
 	std::map <std::string, DataLoader::Data> m_data;	//ステージデータ
 	std::string m_usedataName;			//使用するステージ名
+
+	DataLoader* m_dataLoader;
 
 };
 
