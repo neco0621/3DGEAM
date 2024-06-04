@@ -6,7 +6,7 @@ class SoccerBall
 {
 public:
 	SoccerBall();
-	~SoccerBall();
+	virtual ~SoccerBall();
 
 	void Init();
 	void Update();

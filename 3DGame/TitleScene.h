@@ -6,7 +6,7 @@ class TitleScene :  public Scene
 {
 public:
     TitleScene(SceneManager& mgr);
-    ~TitleScene();
+    virtual ~TitleScene();
 
     void Init();
     void Update(Input& input);

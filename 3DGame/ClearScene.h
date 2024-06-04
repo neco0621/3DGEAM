@@ -6,7 +6,7 @@ class ClearScene :  public Scene
 {
 public:
     ClearScene(SceneManager& mgr);
-    ~ClearScene();
+    virtual ~ClearScene();
 
     void Init();
     void Update(Input& input);

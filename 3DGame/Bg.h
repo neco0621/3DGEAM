@@ -5,7 +5,7 @@ class Bg
 {
 public:
 	Bg();
-	~Bg();
+	virtual ~Bg();
 
 	void Init();
 	void Update();

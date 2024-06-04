@@ -13,7 +13,7 @@ class SceneMain : public Scene
 {
 public:
 	SceneMain(SceneManager& mgr);
-	~SceneMain();
+	virtual ~SceneMain();
 	virtual void Init();
 	virtual void Update(Input& input);
 	virtual void Draw();
