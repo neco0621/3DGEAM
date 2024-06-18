@@ -6,7 +6,6 @@
 
 ClearScene::ClearScene(SceneManager& mgr) : Scene(mgr),
 //‰Šú‰»
-m_frame(60),
 m_bgHandle(-1),
 m_rogoHandle(-1)
 {

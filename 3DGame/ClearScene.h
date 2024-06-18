@@ -14,7 +14,6 @@ public:
 
 private:
 
-    float m_frame;
     //背景のハンドル
     int m_bgHandle;
     //クリア文字のハンドル

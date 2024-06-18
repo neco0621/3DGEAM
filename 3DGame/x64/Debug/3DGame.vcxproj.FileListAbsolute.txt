@@ -1,3 +1,4 @@
 D:\3DGame\x64\Debug\3DGame.exe
 C:\3DGEAM\3DGame\x64\Debug\3DGame.exe
 C:\Users\fko2347078\Documents\GitHub\3DGEAM\3DGame\x64\Debug\3DGame.exe
+C:\Users\金子瞬\Documents\GitHub\3DGEAM\3DGame\x64\Debug\3DGame.exe

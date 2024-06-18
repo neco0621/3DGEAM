@@ -15,6 +15,7 @@
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
+m_gameClearFlag(false),
 m_timer(1800.0f),
 m_groundModel(-1)
 {
@@ -70,12 +71,16 @@ void SceneMain::Update(Input& input)
 
 	if (m_timer < 0)
 	{
-		manager_.ChangeScene(std::make_shared<ClearScene>(manager_));
+		m_gameClearFlag = true;
 	}
 
 	if (m_gameOverFlag)
 	{
 		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
+	}
+	else if(m_gameClearFlag)
+	{
+		manager_.ChangeScene(std::make_shared<ClearScene>(manager_));
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_groundModel, VGet(Game::kScreenWidth / 2,-200,Game::kScreenHeight));
@@ -94,4 +99,8 @@ void SceneMain::Draw()
 	m_pBall->Draw();
 	//SetFontSize(64);
 	DrawFormatString(470, 100, GetColor(255, 255, 255), "残り時間:(%.2f)", m_timer / 60);
+	DrawLine3D(VGet(0, 0, Game::kScreenHeight), VGet(0, 0, 0), 0xff0000);
+	DrawLine3D(VGet(Game::kScreenWidth, 0, Game::kScreenHeight), VGet(Game::kScreenWidth, 0, 0), 0xff0000);
+	DrawLine3D(VGet(0, 0, Game::kScreenHeight), VGet(Game::kScreenWidth, 0, Game::kScreenHeight), 0xff0000);
+	DrawLine3D(VGet(0, 0, 0), VGet(Game::kScreenWidth, 0, 0), 0xff0000);
 }

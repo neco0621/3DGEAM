@@ -35,6 +35,7 @@ private:
 	//ゲームオーバーのフラグ
 	bool m_gameOverFlag;
 
+	bool m_gameClearFlag;
 	//背景のハンドル
 	int m_handle;
 

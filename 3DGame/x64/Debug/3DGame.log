@@ -1,10 +1,2 @@
 ﻿  SceneMain.cpp
-  SoccerBall.cpp
-C:\3DGEAM\3DGame\SoccerBall.cpp(54,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\SoccerBall.cpp(59,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\SoccerBall.cpp(64,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\SoccerBall.cpp(71,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\SoccerBall.cpp(77,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\3DGEAM\3DGame\SoccerBall.cpp(80,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  コードを生成中...
-  3DGame.vcxproj -> C:\3DGEAM\3DGame\x64\Debug\3DGame.exe
+  3DGame.vcxproj -> C:\Users\金子瞬\Documents\GitHub\3DGEAM\3DGame\x64\Debug\3DGame.exe

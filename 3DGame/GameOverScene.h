@@ -13,9 +13,7 @@ public:
     void Draw();
 
 private:
-
-    float m_frame;
-    //
+    //背景ハンドル
     int m_handle;
     //ゲームオーバーのロゴのハンドル
     int m_rogoHandle;

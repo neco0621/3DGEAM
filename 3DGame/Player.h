@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include "DxLib.h"
 #include "Rect.h"
 #include "DataLoader.h"
@@ -47,7 +48,7 @@ private:
 	std::map <std::string, DataLoader::Data> m_data;	//ステージデータ
 	std::string m_usedataName;			//使用するステージ名
 
-	DataLoader* m_dataLoader;
+	std::shared_ptr<DataLoader> m_pDataLoader;
 
 };
 

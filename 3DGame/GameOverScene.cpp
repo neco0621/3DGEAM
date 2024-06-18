@@ -5,7 +5,6 @@
 
 GameOverScene::GameOverScene(SceneManager& mgr) : Scene(mgr),
 //初期化
-m_frame(60),
 m_handle(-1)
 {
 	//ロゴのハンドルのロード
