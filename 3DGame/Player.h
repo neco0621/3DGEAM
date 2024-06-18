@@ -38,7 +38,11 @@ private:
 	//当たり判定の円の半径
 	float m_radius;
 
+	//移動速度
 	float m_speed;
+
+	//大きさ
+	float m_scale;
 
 	std::map <std::string, DataLoader::Data> m_data;	//ステージデータ
 	std::string m_usedataName;			//使用するステージ名

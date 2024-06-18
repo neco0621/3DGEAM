@@ -20,19 +20,18 @@ public:
 	virtual void Draw();
 
 private:
-
 	//プレイヤー
-	Player* m_pPlayer;
+	std::shared_ptr<Player> m_pPlayer;
 	//カメラ
-	Camera* m_pCamera;
+	std::shared_ptr<Camera> m_pCamera;
 	//ボール
-	SoccerBall* m_pBall;
+	std::shared_ptr<SoccerBall> m_pBall;
 	//当たり判定
-	Rect m_pRect;
+	std::shared_ptr<Rect> m_pRect;
 	//背景
-	Bg* m_pBg;
+	std::shared_ptr<Bg> m_pBg;
 
-	DataLoader* m_pDataLoader;
+	std::shared_ptr<DataLoader> m_pDataLoader;
 	//ゲームオーバーのフラグ
 	bool m_gameOverFlag;
 

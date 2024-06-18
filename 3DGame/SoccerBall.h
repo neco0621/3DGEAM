@@ -44,8 +44,6 @@ private:
 	VECTOR m_rotation;
 	//‰ñ“]‚Ì‘å‚«‚³
 	float m_rotatePower;
-	//‰ñ“]‚Ì‘å‚«‚³‚ÌÅ‘å’l
-	float m_maxRotatePower;
 	//c‚èŠÔ
 	float m_maxTimer;
 };

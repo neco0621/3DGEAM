@@ -8,6 +8,7 @@ GameOverScene::GameOverScene(SceneManager& mgr) : Scene(mgr),
 m_frame(60),
 m_handle(-1)
 {
+	//ロゴのハンドルのロード
 	m_rogoHandle = LoadGraph("data/image/GameOver.png");
 	//ライトを使うか使わないか
 	SetUseLighting(FALSE);

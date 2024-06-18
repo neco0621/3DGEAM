@@ -15,6 +15,8 @@ public:
 private:
 
     float m_frame;
+    //
     int m_handle;
+    //ゲームオーバーのロゴのハンドル
     int m_rogoHandle;
 };

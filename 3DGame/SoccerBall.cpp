@@ -1,21 +1,31 @@
 #include "SoccerBall.h"
 #include "Game.h"
 
+namespace
+{
+	constexpr float kRadius				= 100.0f;
+	constexpr float kScale				= 100.0f;
+	constexpr float kCourveAdjustment	= 150.0f;
+	constexpr float kMaxTimer			= 1800.0f;
+	constexpr float kMaxCourvePower		= 10.0f;
+	constexpr float kPosX				= 540.0f;
+	constexpr float kPosZ				= 1500.0f;
+}
+
 SoccerBall::SoccerBall() :
 	//初期化
 	m_modelHandle(-1),
 	m_curvePower(0),
-	m_pos(VGet(540.0f, 0.0f, 1500.0f)),
-	m_radius(100.0f),
+	m_pos(VGet(kPosX, 0.0f, kPosZ)),
+	m_radius(kRadius),
 	m_speed(15.0f),
 	m_timer(1800.0f),
-	m_maxTimer(1800.0f),
+	m_maxTimer(kMaxTimer),
 	m_maxCourvePower(10.0f),
-	m_scale(100.0f),
+	m_scale(kScale),
 	m_rotation(VGet(0,0,0)),
 	m_rotatePower(0.0f),
-	m_maxRotatePower(0.4f),
-	m_courveAdjustment(150.0f)
+	m_courveAdjustment(kCourveAdjustment)
 {
 	//モデルのロード
 	m_modelHandle = MV1LoadModel("data/model/SoccerBall.mv1");
@@ -25,7 +35,6 @@ SoccerBall::~SoccerBall()
 {
 	//メモリの開放
 	MV1DeleteModel(m_modelHandle);
-
 }
 
 void SoccerBall::Init()

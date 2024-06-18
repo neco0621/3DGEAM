@@ -8,6 +8,7 @@ TitleScene::TitleScene(SceneManager& mgr) : Scene(mgr),
 m_pos(VGet(Game::kScreenWidth / 2 - 300,0,0)),
 m_moveFlag(true)
 {
+	//ハンドルのロード
 	m_bgHandle = LoadGraph("data/image/Title.png");
 	m_titleRogo = LoadGraph("data/image/TitleRogo.png");
 	//ライトを使うか使わないか
@@ -16,6 +17,7 @@ m_moveFlag(true)
 
 TitleScene::~TitleScene()
 {
+	//メモリの開放
 	DeleteGraph(m_bgHandle);
 	DeleteGraph(m_titleRogo);
 }

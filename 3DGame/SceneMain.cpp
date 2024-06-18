@@ -18,24 +18,23 @@ m_gameOverFlag(false),
 m_timer(1800.0f),
 m_groundModel(-1)
 {
-
 	//プレイヤーのメモリの確保
-	m_pPlayer = new Player;
+	m_pPlayer = std::make_shared<Player>();
 	m_pPlayer->Init();
 
 	//カメラのメモリを確保
-	m_pCamera = new Camera;
+	m_pCamera = std::make_shared<Camera>();
 	m_pCamera->Init();
 
 	//ボールのメモリの確保
-	m_pBall = new SoccerBall;
+	m_pBall = std::make_shared<SoccerBall>();
 	m_pBall->Init();
 
 	//背景のモデル確保
-	m_pBg = new Bg;
+	m_pBg = std::make_shared<Bg>();
 	m_pBg->Init();
 
-	m_pDataLoader = new DataLoader;
+	m_pDataLoader = std::make_shared<DataLoader>();
 	m_pDataLoader->DataLoad();
 
 	m_handle = LoadGraph("data/image/Sunny.png");
@@ -47,23 +46,6 @@ m_groundModel(-1)
 
 SceneMain::~SceneMain()
 {
-	//プレイヤーのメモリの開放
-	delete m_pPlayer;
-	m_pPlayer = nullptr;
-
-	//カメラのメモリの解放
-	delete m_pCamera;
-	m_pCamera = nullptr;
-	
-	//ボールのメモリの開放
-	delete m_pBall;
-	m_pBall = nullptr;
-
-	delete m_pBg;
-	m_pBg = nullptr;
-
-	delete m_pDataLoader;
-	m_pDataLoader = nullptr;
 }
 
 void SceneMain::Init()
@@ -91,7 +73,7 @@ void SceneMain::Update(Input& input)
 		manager_.ChangeScene(std::make_shared<ClearScene>(manager_));
 	}
 
-	if (m_gameOverFlag == true)
+	if (m_gameOverFlag)
 	{
 		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
 	}

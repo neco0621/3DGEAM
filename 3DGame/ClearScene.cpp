@@ -10,6 +10,7 @@ m_frame(60),
 m_bgHandle(-1),
 m_rogoHandle(-1)
 {
+	//ƒƒS‚Ìƒnƒ“ƒhƒ‹
 	m_rogoHandle = LoadGraph("data/image/GameClear.png");
 }
 

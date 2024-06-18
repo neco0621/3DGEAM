@@ -3,15 +3,24 @@
 #include "Pad.h"
 #include "Game.h"
 
+namespace
+{
+	constexpr float kSpeed = 7.0f;
+	constexpr float kRadius = 70.0f;
+	constexpr float kScale = 0.5f;
+}
 
 Player::Player() :
 	//‰Šú‰»
 	m_modelHandle(-1),
-	m_radius(70)
+	m_radius(kRadius),
+	m_pos(VGet(540,0,360)),
+	m_speed(kSpeed),
+	m_scale(kScale)
 {
 	//ƒ‚ƒfƒ‹‚ğƒ[ƒh
 	m_modelHandle = MV1LoadModel("data/model/Character.mv1");
-	SetData(m_data[m_usedataName]);
+	//SetData(m_data[m_usedataName]);
 }
 
 Player::~Player()
