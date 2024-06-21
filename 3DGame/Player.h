@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
 #include "DxLib.h"
-#include "Rect.h"
+#include "Collision.h"
 #include "DataLoader.h"
 
 class DataLoader;
@@ -22,7 +22,7 @@ public:
 	float GetRadius() const { return m_radius; }
 
 	//“–‚½‚è”»’è‚ÌŽæ“¾
-	Rect GetColRect() const { return m_colRect; }
+	Collision GetCol() const { return m_col; }
 
 	void SetData(DataLoader::Data inputData);
 
@@ -34,7 +34,7 @@ private:
 	VECTOR m_pos;
 
 	//“–‚½‚è”»’è—p‚Ì‹éŒ`
-	Rect m_colRect;
+	Collision m_col;
 
 	//“–‚½‚è”»’è‚Ì‰~‚Ì”¼Œa
 	float m_radius;

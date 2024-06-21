@@ -1,6 +1,6 @@
 #pragma once
 #include "DxLib.h"
-#include "Rect.h"
+#include "Collision.h"
 
 class SoccerBall
 {
@@ -17,7 +17,7 @@ public:
 	//半径の取得
 	float GetRadius() const { return m_radius; }
 	//当たり判定の取得
-	Rect GetColRect() const { return m_colRect; }
+	Collision GetCol() const { return m_col; }
 
 private:
 	//モデルハンドル
@@ -27,7 +27,7 @@ private:
 	//タイマー
 	float m_timer;
 	//当たり判定
-	Rect m_colRect;
+	Collision m_col;
 	//円の半径
 	float m_radius;
 	//横移動の力

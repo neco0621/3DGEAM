@@ -1,6 +1,6 @@
 #pragma once
 #include "Scene.h"
-#include "Rect.h"
+#include "Collision.h"
 #include <vector>
 #include <memory>
 #include <DxLib.h>
@@ -27,7 +27,7 @@ private:
 	//ƒ{[ƒ‹
 	std::shared_ptr<SoccerBall> m_pBall;
 	//“–‚½‚è”»’è
-	std::shared_ptr<Rect> m_pRect;
+	std::shared_ptr<Collision> m_pCol;
 	//”wŒi
 	std::shared_ptr<Bg> m_pBg;
 

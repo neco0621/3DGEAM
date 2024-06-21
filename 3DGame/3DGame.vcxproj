@@ -159,7 +159,7 @@
     <ClCompile Include="Pad.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ReadCsv.cpp" />
-    <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -178,7 +178,7 @@
     <ClInclude Include="Pad.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ReadCsv.h" />
-    <ClInclude Include="Rect.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneManager.h" />

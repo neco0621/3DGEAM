@@ -31,8 +31,6 @@ public:
 
 private:
 	std::vector<std::string> Split(std::string& str, char del);
-
-private:
 	std::map<std::string, Data> m_data;
 	std::vector<std::string> m_dataName;
 };

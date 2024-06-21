@@ -10,7 +10,7 @@
 #include "Bg.h"
 #include "ClearScene.h"
 #include "GameOverScene.h"
-#include "Rect.h"
+#include "Collision.h"
 #include "DataLoader.h"
 
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
@@ -61,10 +61,10 @@ void SceneMain::Update(Input& input)
 	m_pBall->Update();
 	m_pCamera->Update();
 
-	Rect playerRect = m_pPlayer->GetColRect();
-	Rect ballRect = m_pBall->GetColRect();
+	Collision playerCollision = m_pPlayer->GetColRect();
+	Collision ballCollision = m_pBall->GetColRect();
 
-	if (ballRect.SphereCollision(playerRect))
+	if (ballCollision.SphereCollision(playerCollision))
 	{
 		m_gameOverFlag = true;
 	}
