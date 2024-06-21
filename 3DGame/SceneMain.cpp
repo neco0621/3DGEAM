@@ -61,8 +61,8 @@ void SceneMain::Update(Input& input)
 	m_pBall->Update();
 	m_pCamera->Update();
 
-	Collision playerCollision = m_pPlayer->GetColRect();
-	Collision ballCollision = m_pBall->GetColRect();
+	Collision playerCollision = m_pPlayer->GetCol();
+	Collision ballCollision = m_pBall->GetCol();
 
 	if (ballCollision.SphereCollision(playerCollision))
 	{

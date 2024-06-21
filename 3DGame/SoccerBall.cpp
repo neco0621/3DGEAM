@@ -107,7 +107,7 @@ void SoccerBall::Update()
 	//モデルの角度調整
 	MV1SetRotationXYZ(m_modelHandle, m_rotation);
 	//当たり判定の更新
-	m_colRect.SetRadius3D(m_pos.x, m_pos.y, m_pos.z, m_radius);
+	m_col.SetRadius3D(m_pos.x, m_pos.y, m_pos.z, m_radius);
 }
 
 void SoccerBall::Draw()
@@ -116,6 +116,6 @@ void SoccerBall::Draw()
 	MV1DrawModel(m_modelHandle);
 #ifdef _DEBUG
 	DrawFormatString(80, 120, GetColor(255, 255, 255), "ボールの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
-	m_colRect.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);
+	m_col.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);
 #endif
 }
