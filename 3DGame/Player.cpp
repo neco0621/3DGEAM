@@ -1,6 +1,5 @@
 //ヘッダーファイルのインクルード
 #include "Player.h"
-#include "Pad.h"
 #include "Game.h"
 
 namespace
