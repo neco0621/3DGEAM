@@ -7,7 +7,7 @@ class ReadCsv
 {
 public:
 	ReadCsv();
-	~ReadCsv();
+	virtual ~ReadCsv();
 
 	void Init();
 	void Update();

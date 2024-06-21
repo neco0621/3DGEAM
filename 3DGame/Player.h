@@ -15,6 +15,9 @@ public:
 	void Update();
 	void Draw();
 
+	//メンバー変数にアクセスする
+	void SetHandle(int handle) { m_modelHandle = handle; }
+
 	//座標の取得
 	VECTOR GetPos() const { return m_pos; }
 
@@ -27,14 +30,23 @@ public:
 	void SetData(DataLoader::Data inputData);
 
 private:
-	//3Dモデルのハンドル
-	int m_modelHandle;
-
 	//Playerの座標
 	VECTOR m_pos;
 
 	//当たり判定用の矩形
 	Collision m_col;
+
+	//3Dモデルのハンドル
+	int m_modelHandle;
+
+	//3Dモデルのアニメーションインデックス
+	int AttachIndex;
+	
+	//アニメーションの再生時間
+	float TottalTime;
+
+	//アニメーションの現在時間
+	float PlayTime;
 
 	//当たり判定の円の半径
 	float m_radius;

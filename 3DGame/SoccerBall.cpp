@@ -10,6 +10,7 @@ namespace
 	constexpr float kMaxCourvePower		= 10.0f;
 	constexpr float kPosX				= 540.0f;
 	constexpr float kPosZ				= 1500.0f;
+	constexpr float kMaxRotation		= 360.0f;
 }
 
 SoccerBall::SoccerBall() :
@@ -25,22 +26,17 @@ SoccerBall::SoccerBall() :
 	m_scale(kScale),
 	m_rotation(VGet(0,0,0)),
 	m_rotatePower(0.0f),
-	m_courveAdjustment(kCourveAdjustment)
+	m_courveAdjustment(kCourveAdjustment),
+	m_maxRotation(kMaxRotation)
 {
-	//モデルのロード
-	m_modelHandle = MV1LoadModel("data/model/SoccerBall.mv1");
 }
 
 SoccerBall::~SoccerBall()
 {
-	//メモリの開放
-	MV1DeleteModel(m_modelHandle);
 }
 
 void SoccerBall::Init()
 {
-	//モデルの大きさを調整
-	MV1SetScale(m_modelHandle, VGet(m_scale, m_scale, m_scale));
 	//ライトを使うか使わないか
 	SetUseLighting(FALSE);
 }
@@ -83,11 +79,11 @@ void SoccerBall::Update()
 	}
 
 	//回転角度が360になったら0度に戻す
-	if (m_rotation.x > 360)
+	if (m_rotation.x > m_maxRotation)
 	{
 		m_rotation.x = 0;
 	}
-	if (m_rotation.y > 360)
+	if (m_rotation.y > m_maxRotation)
 	{
 		m_rotation.y = 0;
 	}

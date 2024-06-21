@@ -40,6 +40,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 		
 		input.Update();
+		manager.Init();
 		manager.Update(input);
 		manager.Draw();
 

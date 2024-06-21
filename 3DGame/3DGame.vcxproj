@@ -149,7 +149,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bg.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="DataLoader.cpp" />
@@ -167,7 +166,6 @@
     <ClCompile Include="Vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bg.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="DataLoader.h" />

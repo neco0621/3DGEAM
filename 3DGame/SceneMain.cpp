@@ -1,4 +1,5 @@
 #include <DxLib.h>
+#include <cassert>
 #include "Input.h"
 #include "SceneManager.h"
 #include "SceneMain.h"
@@ -7,17 +8,26 @@
 #include "Camera.h"
 #include "SoccerBall.h"
 #include "Game.h"
-#include "Bg.h"
 #include "ClearScene.h"
 #include "GameOverScene.h"
 #include "Collision.h"
 #include "DataLoader.h"
 
+
+namespace
+{
+	//サッカーボールのモデルのサイズ
+	constexpr float kBallScale = 100.0f;
+}
+
+
 SceneMain::SceneMain(SceneManager& manager) : Scene(manager),
 m_gameOverFlag(false),
 m_gameClearFlag(false),
 m_timer(1800.0f),
-m_groundModel(-1)
+m_groundModel(-1),
+m_playerHandle(-1),
+m_ballHandle(-1)
 {
 	//プレイヤーのメモリの確保
 	m_pPlayer = std::make_shared<Player>();
@@ -31,26 +41,44 @@ m_groundModel(-1)
 	m_pBall = std::make_shared<SoccerBall>();
 	m_pBall->Init();
 
-	//背景のモデル確保
-	m_pBg = std::make_shared<Bg>();
-	m_pBg->Init();
-
 	m_pDataLoader = std::make_shared<DataLoader>();
 	m_pDataLoader->DataLoad();
 
+	//背景の画像のロード
 	m_handle = LoadGraph("data/image/Sunny.png");
-
+	assert(m_handle != -1);
+	//地面のモデルのロード
 	m_groundModel = MV1LoadModel("data/model/Ground.MV1");
+	assert(m_groundModel != -1);
+	//プレイヤーのモデルのロード
+	m_playerHandle = MV1LoadModel("data/model/Character.mv1");
+	assert(m_playerHandle != -1);
+	//サッカーボールのモデルのロード
+	m_ballHandle = MV1LoadModel("data/model/SoccerBall.mv1");
+	assert(m_ballHandle != -1);
 
-	MV1SetScale(m_groundModel, VGet(1.5f, 1, 1.5f));
+	//プレイヤーのモデルのセット
+	m_pPlayer->SetHandle(m_playerHandle);
+	//サッカーボールのモデルのセット
+	m_pBall->SetHandle(m_ballHandle);
 }
 
 SceneMain::~SceneMain()
 {
+	//メモリの開放
+	MV1DeleteModel(m_groundModel);
+	MV1DeleteModel(m_playerHandle);
+	MV1DeleteModel(m_ballHandle);
 }
 
 void SceneMain::Init()
 {
+	//地面のモデルのサイズ調整
+	MV1SetScale(m_groundModel, VGet(1.5f, 1, 1.5f));
+	//モデルのサイズを調整
+	MV1SetScale(m_playerHandle, VGet(0.5f, 0.5f, 0.5f));
+	//サッカーボールのモデルの大きさを調整
+	MV1SetScale(m_ballHandle, VGet(kBallScale, kBallScale, kBallScale));
 }
 
 void SceneMain::Update(Input& input)

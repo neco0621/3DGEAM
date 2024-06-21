@@ -8,7 +8,6 @@
 class Player;
 class Camera;
 class SoccerBall;
-class Bg;
 class DataLoader;
 class SceneMain : public Scene
 {
@@ -28,17 +27,19 @@ private:
 	std::shared_ptr<SoccerBall> m_pBall;
 	//当たり判定
 	std::shared_ptr<Collision> m_pCol;
-	//背景
-	std::shared_ptr<Bg> m_pBg;
 
 	std::shared_ptr<DataLoader> m_pDataLoader;
 	//ゲームオーバーのフラグ
 	bool m_gameOverFlag;
-
+	//ゲームクリアのフラグ
 	bool m_gameClearFlag;
 	//背景のハンドル
 	int m_handle;
-
+	//プレイヤーのモデル
+	int m_playerHandle;
+	//サッカーボールのモデル
+	int m_ballHandle;
+	//地面のモデル
 	int m_groundModel;
 	//経過時間
 	float m_timer;

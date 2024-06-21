@@ -15,29 +15,28 @@ Player::Player() :
 	m_radius(kRadius),
 	m_pos(VGet(540,0,360)),
 	m_speed(kSpeed),
-	m_scale(kScale)
+	m_scale(kScale),
+	PlayTime(0.0f)
 {
-	//モデルをロード
-	m_modelHandle = MV1LoadModel("data/model/Character.mv1");
+	AttachIndex = MV1AttachAnim(m_modelHandle, 11, -1);
+	TottalTime = MV1GetAttachAnimTotalTime(m_modelHandle,AttachIndex);
+	MV1SetAttachAnimTime(m_modelHandle, AttachIndex, PlayTime);
 	//SetData(m_data[m_usedataName]);
 }
 
 Player::~Player()
 {
-	//メモリの開放
-	MV1DeleteModel(m_modelHandle);
 }
 
 void Player::Init()
 {
-	//モデルのサイズを調整
-	MV1SetScale(m_modelHandle, VGet(0.5f, 0.5f, 0.5f));
 	//ライトを使うか使わないか
 	SetUseLighting(FALSE);
 }
 
 void Player::Update()
 {
+	PlayTime += 100.0f;
 	//プレイヤーの移動
 	int pad = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
@@ -80,10 +79,19 @@ void Player::Update()
 		m_pos = VGet(m_pos.x, m_pos.y, 0 + m_radius);
 	}
 
+	// アニメーション再生時間がアニメーションの総時間を越えていたらループさせる
+	if (PlayTime >= TottalTime)
+	{
+		// 新しいアニメーション再生時間は、アニメーション再生時間からアニメーション総時間を引いたもの
+		PlayTime -= TottalTime;
+	}
+
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_modelHandle, m_pos);
 	//当たり判定の円を作成
-	m_col.SetRadius3D(m_pos.x,m_pos.y + 50,m_pos.z,m_radius);
+	m_col.SetRadius3D(m_pos.x, m_pos.y + 50, m_pos.z, m_radius);
+	
+	MV1SetAttachAnimTime(m_modelHandle, AttachIndex, PlayTime);
 }
 
 void Player::Draw()
