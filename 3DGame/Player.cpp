@@ -16,11 +16,11 @@ Player::Player() :
 	m_pos(VGet(540,0,360)),
 	m_speed(kSpeed),
 	m_scale(kScale),
-	PlayTime(0.0f)
+	m_playTime(0.0f)
 {
-	AttachIndex = MV1AttachAnim(m_modelHandle, 11, -1);
-	TottalTime = MV1GetAttachAnimTotalTime(m_modelHandle,AttachIndex);
-	MV1SetAttachAnimTime(m_modelHandle, AttachIndex, PlayTime);
+	m_attachIndex = MV1AttachAnim(m_modelHandle, 11, -1);
+	m_tottalTime = MV1GetAttachAnimTotalTime(m_modelHandle,m_attachIndex);
+	MV1SetAttachAnimTime(m_modelHandle, m_attachIndex, m_playTime);
 	//SetData(m_data[m_usedataName]);
 }
 
@@ -36,7 +36,7 @@ void Player::Init()
 
 void Player::Update()
 {
-	PlayTime += 100.0f;
+	m_playTime += 100.0f;
 	//プレイヤーの移動
 	int pad = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
@@ -80,10 +80,10 @@ void Player::Update()
 	}
 
 	// アニメーション再生時間がアニメーションの総時間を越えていたらループさせる
-	if (PlayTime >= TottalTime)
+	if (m_playTime >= m_tottalTime)
 	{
 		// 新しいアニメーション再生時間は、アニメーション再生時間からアニメーション総時間を引いたもの
-		PlayTime -= TottalTime;
+		m_playTime -= m_tottalTime;
 	}
 
 	// ３Dモデルのポジション設定
@@ -91,7 +91,7 @@ void Player::Update()
 	//当たり判定の円を作成
 	m_col.SetRadius3D(m_pos.x, m_pos.y + 50, m_pos.z, m_radius);
 	
-	MV1SetAttachAnimTime(m_modelHandle, AttachIndex, PlayTime);
+	MV1SetAttachAnimTime(m_modelHandle, m_attachIndex, m_playTime);
 }
 
 void Player::Draw()

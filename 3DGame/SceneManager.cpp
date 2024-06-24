@@ -7,38 +7,38 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init()
 {
-	scenes_.back()->Init();
+	m_scenes.back()->Init();
 }
 
 void SceneManager::Update(Input& input)
 {
-	scenes_.back()->Update(input);
+	m_scenes.back()->Update(input);
 }
 
 void SceneManager::Draw()
 {
-	for (auto& scene : scenes_) {
+	for (auto& scene : m_scenes) {
 		scene->Draw();
 	}
 }
 
 void SceneManager::ChangeScene(std::shared_ptr<Scene> nextScene)
 {
-	if (scenes_.empty()) {//リストが空っぽだったら入れ替えるのではなく
-		scenes_.push_back(nextScene);//末尾に追加する
+	if (m_scenes.empty()) {//リストが空っぽだったら入れ替えるのではなく
+		m_scenes.push_back(nextScene);//末尾に追加する
 	}
 	else {
-		scenes_.back() = nextScene;//すでに1つ以上あったら末尾のものを入れ替える
+		m_scenes.back() = nextScene;//すでに1つ以上あったら末尾のものを入れ替える
 	}
 
 }
 
 void SceneManager::PushScene(std::shared_ptr<Scene> scene)
 {
-	scenes_.push_back(scene);
+	m_scenes.push_back(scene);
 }
 
 void SceneManager::PopScene()
 {
-	scenes_.pop_back();
+	m_scenes.pop_back();
 }

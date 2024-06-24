@@ -13,7 +13,7 @@ private:
 	//アスタリスクを外すことはできない
 	//外してしまうと実体を作ってしまい
 	//場所が固定化され、切り替えができない
-	std::list<std::shared_ptr<Scene>>scenes_;
+	std::list<std::shared_ptr<Scene>>m_scenes;
 public:
 	~SceneManager();
 

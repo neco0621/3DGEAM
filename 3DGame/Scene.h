@@ -9,7 +9,7 @@ class SceneManager;
 class Scene
 {
 protected:
-	SceneManager& manager_;	//シーン管理クラスの参照
+	SceneManager& m_manager;	//シーン管理クラスの参照
 
 public:
 	/// <summary>

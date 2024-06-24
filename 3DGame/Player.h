@@ -40,13 +40,13 @@ private:
 	int m_modelHandle;
 
 	//3Dモデルのアニメーションインデックス
-	int AttachIndex;
+	int m_attachIndex;
 	
 	//アニメーションの再生時間
-	float TottalTime;
+	float m_tottalTime;
 
 	//アニメーションの現在時間
-	float PlayTime;
+	float m_playTime;
 
 	//当たり判定の円の半径
 	float m_radius;

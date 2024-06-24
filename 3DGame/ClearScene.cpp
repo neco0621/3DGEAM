@@ -29,7 +29,7 @@ void ClearScene::Update(Input& input)
 	if (input.IsTriggered("OK"))
 	{
 		//Ÿ‚ÌƒV[ƒ“‚ÉˆÚ“®‚·‚é
-		manager_.ChangeScene(std::make_shared<TitleScene>(manager_));
+		m_manager.ChangeScene(std::make_shared<TitleScene>(m_manager));
 	}
 }
 

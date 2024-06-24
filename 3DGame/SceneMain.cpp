@@ -104,11 +104,11 @@ void SceneMain::Update(Input& input)
 
 	if (m_gameOverFlag)
 	{
-		manager_.ChangeScene(std::make_shared<GameOverScene>(manager_));
+		m_manager.ChangeScene(std::make_shared<GameOverScene>(m_manager));
 	}
 	else if(m_gameClearFlag)
 	{
-		manager_.ChangeScene(std::make_shared<ClearScene>(manager_));
+		m_manager.ChangeScene(std::make_shared<ClearScene>(m_manager));
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_groundModel, VGet(Game::kScreenWidth / 2,-200,Game::kScreenHeight));
