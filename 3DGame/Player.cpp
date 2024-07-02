@@ -4,9 +4,16 @@
 
 namespace
 {
+	//スピード
 	constexpr float kSpeed	= 7.0f;
+	//半径
 	constexpr float kRadius = 70.0f;
+	//モデルのサイズ
 	constexpr float kScale	= 0.5f;
+	//描画ずれの修正
+	constexpr float kDefference = 50;
+	//描画位置
+	constexpr float kDrawPos = 80;
 }
 
 Player::Player() :
@@ -89,7 +96,7 @@ void Player::Update()
 	// ３Dモデルのポジション設定
 	MV1SetPosition(m_modelHandle, m_pos);
 	//当たり判定の円を作成
-	m_col.SetRadius3D(m_pos.x, m_pos.y + 50, m_pos.z, m_radius);
+	m_col.SetRadius3D(m_pos.x, m_pos.y + kDefference, m_pos.z, m_radius);
 	
 	MV1SetAttachAnimTime(m_modelHandle, m_attachIndex, m_playTime);
 }
@@ -99,8 +106,8 @@ void Player::Draw()
 	//モデルの描画
 	MV1DrawModel(m_modelHandle);
 #ifdef _DEBUG
-	DrawFormatString(80, 80, 0xffffff, "プレイヤーの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
-	m_col.DrawBall(0xff0000, 0xff000000, false);
+	DrawFormatString(kDrawPos, kDrawPos, 0xffffff, "プレイヤーの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
+	m_col.DrawBall(0xff0000, 0xff0000, false);
 #endif
 }
 

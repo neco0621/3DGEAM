@@ -10,7 +10,7 @@ class DataLoader
 public:
 	struct Data
 	{
-		std::vector<int> data;
+		std::vector<int> objectID;
 		VECTOR startPos;
 		float speed;
 	};

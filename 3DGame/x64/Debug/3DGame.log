@@ -1,9 +1,34 @@
-﻿  ClearScene.cpp
-C:\3DGEAM\3DGame\ClearScene.cpp(39,31): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  GameOverScene.cpp
+﻿  Camera.cpp
+  Collision.cpp
+C:\3DGEAM\3DGame\Collision.cpp(36,88): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(36,62): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(36,36): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(36,176): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(36,148): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(36,121): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(48,96): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(48,67): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(48,38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Collision.cpp(48,127): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  DataLoader.cpp
+C:\3DGEAM\3DGame\DataLoader.cpp(51,35): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\3DGEAM\3DGame\DataLoader.cpp(65,39): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\3DGEAM\3DGame\DataLoader.cpp(68,21): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   Main.cpp
 C:\3DGEAM\3DGame\Main.cpp(13,41): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
 C:\3DGEAM\3DGame\Main.cpp(13,21): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+  Player.cpp
+C:\3DGEAM\3DGame\Player.cpp(109,29): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\Player.cpp(109,19): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+  SceneMain.cpp
+C:\3DGEAM\3DGame\SceneMain.cpp(145,26): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SceneMain.cpp(145,19): warning C4244: '引数': 'const float' から 'int' への変換です。データが失われる可能性があります。
+  SoccerBall.cpp
+C:\3DGEAM\3DGame\SoccerBall.cpp(68,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(74,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(74,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(77,27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\3DGEAM\3DGame\SoccerBall.cpp(77,26): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   TitleScene.cpp
 C:\3DGEAM\3DGame\TitleScene.cpp(63,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 C:\3DGEAM\3DGame\TitleScene.cpp(63,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。

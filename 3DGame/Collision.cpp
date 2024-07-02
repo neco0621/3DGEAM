@@ -15,7 +15,7 @@ Collision::Collision() :
 	m_centerY(0.0f),
 	m_centerZ(0.0f),
 	m_radius(0.0f),
-	DivNum(16),
+	m_divNum(16),
 	m_pos(VGet(0,0,0))
 {
 }
@@ -45,7 +45,7 @@ void Collision::DrawCircle2D(unsigned int color, bool isFill)
 //“–‚½‚è”»’è‚Ì‹…‚Ì•`‰æ
 void Collision::DrawBall(unsigned int color, unsigned int color2, bool isFill)
 {
-	DrawSphere3D(VGet(static_cast<int> (m_centerX), static_cast<int>(m_centerY), static_cast<int>(m_centerZ)), static_cast<int> (m_radius),DivNum, color, color2, isFill);
+	DrawSphere3D(VGet(static_cast<int> (m_centerX), static_cast<int>(m_centerY), static_cast<int>(m_centerZ)), static_cast<int> (m_radius),m_divNum, color, color2, isFill);
 }
 
 //¶ãÀ•W‚Æ•‚‚³‚ğw’è

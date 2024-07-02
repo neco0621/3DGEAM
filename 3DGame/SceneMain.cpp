@@ -18,6 +18,18 @@ namespace
 {
 	//サッカーボールのモデルのサイズ
 	constexpr float kBallScale = 100.0f;
+	//地面のモデルのサイズ
+	constexpr float kGroundScale = 1.5f;
+	//プレイヤーのモデルのサイズ
+	constexpr float kPlsyerScale = 0.5f;
+
+	//画面の位置
+	constexpr float kPosX = 470;
+	constexpr float kPosY = 100;
+
+	//タイマーの時間を秒に変換する
+	constexpr float kChangeTimer = 60;
+	
 }
 
 
@@ -41,6 +53,7 @@ m_ballHandle(-1)
 	m_pBall = std::make_shared<SoccerBall>();
 	m_pBall->Init();
 
+	//CSVのロード用のメモリ確保
 	m_pDataLoader = std::make_shared<DataLoader>();
 	m_pDataLoader->DataLoad();
 
@@ -74,9 +87,9 @@ SceneMain::~SceneMain()
 void SceneMain::Init()
 {
 	//地面のモデルのサイズ調整
-	MV1SetScale(m_groundModel, VGet(1.5f, 1, 1.5f));
+	MV1SetScale(m_groundModel, VGet(kGroundScale, 1, kGroundScale));
 	//モデルのサイズを調整
-	MV1SetScale(m_playerHandle, VGet(0.5f, 0.5f, 0.5f));
+	MV1SetScale(m_playerHandle, VGet(kPlsyerScale, kPlsyerScale, kPlsyerScale));
 	//サッカーボールのモデルの大きさを調整
 	MV1SetScale(m_ballHandle, VGet(kBallScale, kBallScale, kBallScale));
 }
@@ -92,11 +105,13 @@ void SceneMain::Update(Input& input)
 	Collision playerCollision = m_pPlayer->GetCol();
 	Collision ballCollision = m_pBall->GetCol();
 
+	//ボールとプレイヤーがぶつかったら
 	if (ballCollision.SphereCollision(playerCollision))
 	{
 		m_gameOverFlag = true;
 	}
 
+	//時間切れになったら
 	if (m_timer < 0)
 	{
 		m_gameClearFlag = true;
@@ -111,7 +126,7 @@ void SceneMain::Update(Input& input)
 		m_manager.ChangeScene(std::make_shared<ClearScene>(m_manager));
 	}
 	// ３Dモデルのポジション設定
-	MV1SetPosition(m_groundModel, VGet(Game::kScreenWidth / 2,-200,Game::kScreenHeight));
+	MV1SetPosition(m_groundModel, VGet(Game::kScreenWidth / 2, -200, Game::kScreenHeight));
 }
 
 void SceneMain::Draw()
@@ -126,7 +141,8 @@ void SceneMain::Draw()
 	m_pCamera->Draw();
 	m_pBall->Draw();
 	//SetFontSize(64);
-	DrawFormatString(470, 100, GetColor(255, 255, 255), "残り時間:(%.2f)", m_timer / 60);
+
+	DrawFormatString(kPosX, kPosY, 0xffffff, "残り時間:(%.2f)", m_timer / kChangeTimer);
 	DrawLine3D(VGet(0, 0, Game::kScreenHeight), VGet(0, 0, 0), 0xff0000);
 	DrawLine3D(VGet(Game::kScreenWidth, 0, Game::kScreenHeight), VGet(Game::kScreenWidth, 0, 0), 0xff0000);
 	DrawLine3D(VGet(0, 0, Game::kScreenHeight), VGet(Game::kScreenWidth, 0, Game::kScreenHeight), 0xff0000);

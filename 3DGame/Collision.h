@@ -64,5 +64,5 @@ public:
 
 	VECTOR m_pos;	//現在地の座標
 
-	int DivNum;	//ポリゴン数
+	int m_divNum;	//ポリゴン数
 };

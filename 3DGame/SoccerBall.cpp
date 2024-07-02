@@ -11,6 +11,7 @@ namespace
 	constexpr float kPosX				= 540.0f;
 	constexpr float kPosZ				= 1500.0f;
 	constexpr float kMaxRotation		= 360.0f;
+	constexpr float kMinPosZ			= 30.0f;
 }
 
 SoccerBall::SoccerBall() :
@@ -62,7 +63,7 @@ void SoccerBall::Update()
 	}
 
 	//画面外に行ったら初期位置(X座標はランダム)に戻す
-	if (m_pos.z < -300)
+	if (m_pos.z < -kMinPosZ)
 	{
 		m_pos = VGet(GetRand(720), 0.0f, 2000.0f);
 
@@ -111,7 +112,7 @@ void SoccerBall::Draw()
 	//モデルの描画
 	MV1DrawModel(m_modelHandle);
 #ifdef _DEBUG
-	DrawFormatString(80, 120, GetColor(255, 255, 255), "ボールの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
-	m_col.DrawBall(GetColor(255, 0, 0), GetColor(255, 0, 0), false);
+	DrawFormatString(80, 120, 0xffffff, "ボールの座標(%.2f,%.5f)", m_pos.x, m_pos.z);
+	m_col.DrawBall(0xff0000, 0xff0000, false);
 #endif
 }
